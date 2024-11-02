@@ -1,0 +1,18 @@
+{
+  "name": "private-bizcomponent-website",
+  "version": "1.0.0",
+  "description": "基于私有代码数据的业务组件网站",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "typescript": "^5",
+    "@types/node": "^20"
+  }
+}
