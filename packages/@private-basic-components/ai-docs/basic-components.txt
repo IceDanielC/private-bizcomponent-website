@@ -1,6 +1,17 @@
-﻿"index","content"
-"The props documentation for the Affix basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+﻿
+    The documentation for the Affix basic UI components
+    <when-to-use>
+    On longer web pages, it's helpful to stick component into the viewport. This is common for menus and actions.
+
+Please note that Affix should not cover other content on the page, especially when the size of the viewport is small.
+
+> Notes for developers
+>
+> After version `5.10.0`, we rewrite Affix use FC, Some methods of obtaining `ref` and calling internal instance methods will invalid.
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 | Property | Description | Type | Default |
 | --- | --- | --- | --- |
@@ -13,9 +24,19 @@ Common props ref：[Common props](/docs/react/common-props)
 
 ```jsx
 <Affix style={{ position: 'absolute', top: y, left: x }}>...</Affix>
-```"
-"The props documentation for the Alert basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+```
+    </API>
+    
+-------split line-------
+
+    The documentation for the Alert basic UI components
+    <when-to-use>
+    - When you need to show alert messages to users.
+- When you need a persistent static container which is closable by user actions.
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
@@ -35,9 +56,22 @@ Common props ref：[Common props](/docs/react/common-props)
 | Property    | Description                      | Type      | Default           | Version |
 | ----------- | -------------------------------- | --------- | ----------------- | ------- |
 | description | Custom error description to show | ReactNode | {{ error stack }} |         |
-| message     | Custom error message to show     | ReactNode | {{ error }}       |         |"
-"The props documentation for the Anchor basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+| message     | Custom error message to show     | ReactNode | {{ error }}       |         |
+    </API>
+    
+-------split line-------
+
+    The documentation for the Anchor basic UI components
+    <when-to-use>
+    For displaying anchor hyperlinks on page and jumping between them.
+
+> Notes for developers
+>
+> After version `4.24.0`, we rewrite Anchor use FC, Some methods of obtaining `ref` and calling internal instance methods will invalid.
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 ### Anchor Props
 
@@ -75,18 +109,43 @@ We recommend using the items form instead.
 | -------- | ----------------------------------------- | --------- | ------- | ------- |
 | href     | The target of hyperlink                   | string    |         |         |
 | target   | Specifies where to display the linked URL | string    |         |         |
-| title    | The content of hyperlink                  | ReactNode |         |         |"
-"The props documentation for the App basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+| title    | The content of hyperlink                  | ReactNode |         |         |
+    </API>
+    
+-------split line-------
+
+    The documentation for the App basic UI components
+    <when-to-use>
+    - Provide reset styles based on `.ant-app` element.
+- You could use static methods of `message/notification/Modal` form `useApp` without writing `contextHolder` manually.
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 ### App
 
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
 | message | Global config for Message | [MessageConfig](/components/message/#messageconfig) | - | 5.3.0 |
-| notification | Global config for Notification | [NotificationConfig](/components/notification/#notificationconfig) | - | 5.3.0 |"
-"The props documentation for the AutoComplete basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+| notification | Global config for Notification | [NotificationConfig](/components/notification/#notificationconfig) | - | 5.3.0 |
+    </API>
+    
+-------split line-------
+
+    The documentation for the AutoComplete basic UI components
+    <when-to-use>
+    - When you need an input box instead of a selector.
+- When you need input suggestions or helping text.
+
+The differences with Select are:
+
+- AutoComplete is an input box with text hints, and users can type freely. The keyword is aiding **input**.
+- Select is selecting among given choices. The keyword is **select**.
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
@@ -115,39 +174,18 @@ Common props ref：[Common props](/docs/react/common-props)
 | onFocus | Called when entering the component | function() | - |  |
 | onSearch | Called when searching items | function(value) | - |  |
 | onSelect | Called when a option is selected. param is option's value and option instance | function(value, option) | - |  |
-| onClear | Called when clear | function | - | 4.6.0 |"
-"The props documentation for the Avatar basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+| onClear | Called when clear | function | - | 4.6.0 |
+    </API>
+    
+-------split line-------
 
-### Avatar
+    The documentation for the Badge basic UI components
+    <when-to-use>
+    Badge normally appears in proximity to notifications or user avatars with eye-catching appeal, typically displaying unread messages count.
+    </when-to-use>
 
-| Property | Description | Type | Default | Version |
-| --- | --- | --- | --- | --- |
-| alt | This attribute defines the alternative text describing the image | string | - |  |
-| gap | Letter type unit distance between left and right sides | number | 4 | 4.3.0 |
-| icon | Custom icon type for an icon avatar | ReactNode | - |  |
-| shape | The shape of avatar | `circle` \| `square` | `circle` |  |
-| size | The size of the avatar | number \| `large` \| `small` \| `default` \| { xs: number, sm: number, ...} | `default` | 4.7.0 |
-| src | The address of the image for an image avatar or image element | string \| ReactNode | - | ReactNode: 4.8.0 |
-| srcSet | A list of sources to use for different screen resolutions | string | - |  |
-| draggable | Whether the picture is allowed to be dragged | boolean \| `'true'` \| `'false'` | true |  |
-| crossOrigin | CORS settings attributes | `'anonymous'` \| `'use-credentials'` \| `''` | - | 4.17.0 |
-| onError | Handler when img load error, return false to prevent default fallback behavior | () => boolean | - |  |
-
-> Tip: You can set `icon` or `children` as the fallback for image load error, with the priority of `icon` > `children`
-
-### Avatar.Group (4.5.0+)
-
-| Property | Description | Type | Default | Version |
-| --- | --- | --- | --- | --- |
-| maxCount | Max avatars to show | number | - |  |
-| maxPopoverPlacement | The placement of excess avatar Popover | `top` \| `bottom` | `top` |  |
-| maxPopoverTrigger | Set the trigger of excess avatar Popover | `hover` \| `focus` \| `click` | `hover` | 4.17.0 |
-| maxStyle | The style of excess avatar style | CSSProperties | - |  |
-| size | The size of the avatar | number \| `large` \| `small` \| `default` \| { xs: number, sm: number, ...} | `default` | 4.8.0 |
-| shape | The shape of the avatar | `circle` \| `square` | `circle` | 5.8.0 |"
-"The props documentation for the Badge basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 ### Badge
 
@@ -179,9 +217,36 @@ Common props ref：[Common props](/docs/react/common-props)
 | Property  | Description         | Version |
 | --------- | ------------------- | ------- |
 | root      | set `root` element  | 5.7.0   |
-| indicator | set `badge` element | 5.7.0   |"
-"The props documentation for the Breadcrumb basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+| indicator | set `badge` element | 5.7.0   |
+    </API>
+    
+-------split line-------
+
+    The documentation for the Breadcrumb basic UI components
+    <when-to-use>
+    - When the system has more than two layers in a hierarchy.
+- When you need to inform the user of where they are.
+- When the user may need to navigate back to a higher level.
+
+```jsx
+// works when >=5.3.0, recommended ✅
+return <Breadcrumb items={[{ title: 'sample' }]} />;
+
+// works when <5.3.0, deprecated when >=5.3.0 🙅🏻‍♀️
+return (
+  <Breadcrumb>
+    <Breadcrumb.Item>sample</Breadcrumb.Item>
+  </Breadcrumb>
+);
+
+// or
+
+return <Breadcrumb routes={[{ breadcrumbName: 'sample' }]} />;
+```
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 ### Breadcrumb
 
@@ -263,9 +328,33 @@ function itemRender(route, params, items, paths) {
 }
 
 return <Breadcrumb itemRender={itemRender} items={items} />;
-```"
-"The props documentation for the Button basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+```
+    </API>
+    
+-------split line-------
+
+    The documentation for the Button basic UI components
+    <when-to-use>
+    A button means an operation (or a series of operations). Clicking a button will trigger corresponding business logic.
+
+In Ant Design we provide 5 types of button.
+
+- Primary button: indicate the main action, one primary button at most in one section.
+- Default button: indicate a series of actions without priority.
+- Dashed button: commonly used for adding more actions.
+- Text button: used for the most secondary action.
+- Link button: used for external links.
+
+And 4 other properties additionally.
+
+- `danger`: used for actions of risk, like deletion or authorization.
+- `ghost`: used in situations with complex background, home pages usually.
+- `disabled`: when actions are not available.
+- `loading`: add loading spinner in button, avoiding multiple submits too.
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 Different button styles can be generated by setting Button properties. The recommended order is: `type` -> `shape` -> `size` -> `loading` -> `disabled`.
 
@@ -293,9 +382,18 @@ It accepts all props which native buttons support.
 
 | Property | Description       | Version |
 | -------- | ----------------- | ------- |
-| icon     | set `icon`element | 5.5.0   |"
-"The props documentation for the Calendar basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+| icon     | set `icon`element | 5.5.0   |
+    </API>
+    
+-------split line-------
+
+    The documentation for the Calendar basic UI components
+    <when-to-use>
+    When data is in the form of dates, such as schedules, timetables, prices calendar, lunar calendar. This component also supports Year/Month switch.
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 **Note:** Part of the Calendar's locale is read from `value`. So, please set the locale of `dayjs` correctly.
 
@@ -329,12 +427,21 @@ Common props ref：[Common props](/docs/react/common-props)
 | value | The current selected date | [dayjs](https://day.js.org/) | - |  |
 | onChange | Callback for when date changes | function(date: Dayjs) | - |  |
 | onPanelChange | Callback for when panel changes | function(date: Dayjs, mode: string) | - |  |
-| onSelect | Callback for when a date is selected, include source info | function(date: Dayjs, info: { source: 'year' \| 'month' \| 'date' \| 'customize' }) | - | `info`: 5.6.0 |"
-"The props documentation for the Card basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+| onSelect | Callback for when a date is selected, include source info | function(date: Dayjs, info: { source: 'year' \| 'month' \| 'date' \| 'customize' }) | - | `info`: 5.6.0 |
+    </API>
+    
+-------split line-------
+
+    The documentation for the Card basic UI components
+    <when-to-use>
+    A card can be used to display content related to a single subject. The content can consist of multiple elements of varying types and sizes.
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 ```jsx
-<Card title=""Card title"">Card content</Card>
+<Card title="Card title">Card content</Card>
 ```
 
 ### Card
@@ -375,9 +482,20 @@ Common props ref：[Common props](/docs/react/common-props)
 | className   | The className of container    | string        | -       |         |
 | description | Description content           | ReactNode     | -       |         |
 | style       | The style object of container | CSSProperties | -       |         |
-| title       | Title content                 | ReactNode     | -       |         |"
-"The props documentation for the Carousel basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+| title       | Title content                 | ReactNode     | -       |         |
+    </API>
+    
+-------split line-------
+
+    The documentation for the Carousel basic UI components
+    <when-to-use>
+    - When there is a group of content on the same level.
+- When there is insufficient content space, it can be used to save space in the form of a revolving door.
+- Commonly used for a group of pictures/cards.
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
@@ -388,9 +506,20 @@ Common props ref：[Common props](/docs/react/common-props)
 | easing | Transition interpolation function name | string | `linear` |  |
 | effect | Transition effect | `scrollx` \| `fade` | `scrollx` |  |
 | afterChange | Callback function called after the current index changes | (current: number) => void | - |  |
-| beforeChange | Callback function called before the current index changes | (current: number, next: number) => void | - |  |"
-"The props documentation for the Cascader basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+| beforeChange | Callback function called before the current index changes | (current: number, next: number) => void | - |  |
+    </API>
+    
+-------split line-------
+
+    The documentation for the Cascader basic UI components
+    <when-to-use>
+    - When you need to select from a set of associated data set. Such as province/city/district, company level, things classification.
+- When selecting from a large data set, with multi-stage classification separated for easy selection.
+- Chooses cascade items in one float layer for better user experience.
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 ```jsx
 <Cascader options={options} onChange={onChange} />
@@ -462,9 +591,19 @@ interface Option {
   // Show expand icon even if the current node has no children.
   isLeaf?: boolean;
 }
-```"
-"The props documentation for the Checkbox basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+```
+    </API>
+    
+-------split line-------
+
+    The documentation for the Checkbox basic UI components
+    <when-to-use>
+    - Used for selecting multiple values from several options.
+- If you use only one checkbox, it is the same as using Switch to toggle between two states. The difference is that Switch will trigger the state change directly, but Checkbox just marks the state as changed and this needs to be submitted.
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 #### Checkbox
 
@@ -483,7 +622,7 @@ Common props ref：[Common props](/docs/react/common-props)
 | --- | --- | --- | --- | --- |
 | defaultValue | Default selected value | (string \| number)\[] | \[] |  |
 | disabled | If disable all checkboxes | boolean | false |  |
-| name | The `name` property of all `input[type=""checkbox""]` children | string | - |  |
+| name | The `name` property of all `input[type="checkbox"]` children | string | - |  |
 | options | Specifies options | string\[] \| number\[] \| Option\[] | \[] |  |
 | value | Used for setting the currently selected value | (string \| number \| boolean)\[] | \[] |  |
 | onChange | The callback function that is triggered when the state changes | (checkedValue: CheckboxValueType[]) => void | - |  |
@@ -505,9 +644,62 @@ interface Option {
 | Name    | Description  | Version |
 | ------- | ------------ | ------- |
 | blur()  | Remove focus |         |
-| focus() | Get focus    |         |"
-"The props documentation for the Collapse basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+| focus() | Get focus    |         |
+    </API>
+    
+-------split line-------
+
+    The documentation for the Collapse basic UI components
+    <when-to-use>
+    - Can be used to group or hide complex regions to keep the page clean.
+- `Accordion` is a special kind of `Collapse`, which allows only one panel to be expanded at a time.
+
+```tsx | pure
+// works when >= 5.6.0, recommended ✅
+const text = `
+  A dog is a type of domesticated animal.
+  Known for its loyalty and faithfulness,
+  it can be found as a welcome guest in many households across the world.
+`;
+
+const items: CollapseProps['items'] = [
+  {
+    key: '1',
+    label: 'This is panel header 1',
+    children: <p>{text}</p>,
+  },
+  {
+    key: '2',
+    label: 'This is panel header 2',
+    children: <p>{text}</p>,
+  },
+  {
+    key: '3',
+    label: 'This is panel header 3',
+    children: <p>{text}</p>,
+  },
+];
+
+<Collapse items={items} defaultActiveKey={['1']} />;
+
+// works when <5.6.0 , deprecated when >=5.6.0  🙅🏻‍♀️
+
+<Collapse defaultActiveKey={['1']} onChange={onChange}>
+  <Panel header="This is panel header 1" key="1">
+    <p>{text}</p>
+  </Panel>
+  <Panel header="This is panel header 2" key="2">
+    <p>{text}</p>
+  </Panel>
+  <Panel header="This is panel header 3" key="3">
+    <p>{text}</p>
+  </Panel>
+</Collapse>;
+```
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 ### Collapse
 
@@ -528,7 +720,7 @@ Common props ref：[Common props](/docs/react/common-props)
 
 ### Collapse.Panel
 
-<Alert message=""&gt;= 5.6.0 configure the panel by `items`.""></Alert>
+<Alert message="&gt;= 5.6.0 configure the panel by `items`."></Alert>
 
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
@@ -537,9 +729,18 @@ Common props ref：[Common props](/docs/react/common-props)
 | forceRender | Forced render of content on panel, instead of lazy rendering after clicking on header | boolean | false |  |
 | header | Title of the panel | ReactNode | - |  |
 | key | Unique key identifying the panel from among its siblings | string \| number | - |  |
-| showArrow | If false, panel will not show arrow icon. If false, collapsible can't be set as icon | boolean | true |  |"
-"The props documentation for the ColorPicker basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+| showArrow | If false, panel will not show arrow icon. If false, collapsible can't be set as icon | boolean | true |  |
+    </API>
+    
+-------split line-------
+
+    The documentation for the ColorPicker basic UI components
+    <when-to-use>
+    Used when the user needs to customize the color selection.
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 > This component is available since `antd@5.5.0`.
 
@@ -579,125 +780,26 @@ Common props ref：[Common props](/docs/react/common-props)
 | toHsb | Convert to `hsb` object  | `() => ({ h: number, s: number, b: number, a number })` | - |
 | toHsbString | Convert to `hsb` format color string, the return type like: `hsb(215, 91%, 100%)` | `() => string` | - |
 | toRgb | Convert to `rgb` object  | `() => ({ r: number, g: number, b: number, a number })` | - |
-| toRgbString | Convert to `rgb` format color string, the return type like: `rgb(22, 119, 255)` | `() => string` | - |"
-"The props documentation for the ConfigProvider basic UI components","## API
-| Property | Description | Type | Default | Version |
-| --- | --- | --- | --- | --- |
-| autoInsertSpaceInButton | Set false to remove space between 2 chinese characters on Button | boolean | true |  |
-| componentDisabled | Config antd component `disabled` | boolean | - | 4.21.0 |
-| componentSize | Config antd component size | `small` \| `middle` \| `large` | - |  |
-| csp | Set [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) config | { nonce: string } | - |  |
-| direction | Set direction of layout. See [demo](#components-config-provider-demo-direction) | `ltr` \| `rtl` | `ltr` |  |
-| getPopupContainer | To set the container of the popup element. The default is to create a `div` element in `body` | function(triggerNode) | () => document.body |  |
-| getTargetContainer | Config Affix, Anchor scroll target container | () => HTMLElement | () => window | 4.2.0 |
-| iconPrefixCls | Set icon prefix className | string | `anticon` | 4.11.0 |
-| locale | Language package setting, you can find the packages in [antd/locale](http://unpkg.com/antd/locale/) | object | - |  |
-| popupMatchSelectWidth | Determine whether the dropdown menu and the select input are the same width. Default set `min-width` same as input. Will ignore when value less than select width. `false` will disable virtual scroll | boolean \| number | - | 5.5.0 |
-| popupOverflow | Select like component popup logic. Can set to show in viewport or follow window scroll | 'viewport' \| 'scroll' <InlinePopover previewURL=""https://user-images.githubusercontent.com/5378891/230344474-5b9f7e09-0a5d-49e8-bae8-7d2abed6c837.png""></InlinePopover> | 'viewport' | 5.5.0 |
-| prefixCls | Set prefix className | string | `ant` |  |
-| renderEmpty | Set empty content of components. Ref [Empty](/components/empty/) | function(componentName: string): ReactNode | - |  |
-| theme | Set theme, ref [Customize Theme](/docs/react/customize-theme) | [Theme](/docs/react/customize-theme#theme) | - | 5.0.0 |
-| virtual | Disable virtual scroll when set to `false` | boolean | - | 4.3.0 |
-| warning | Config warning level, when `strict` is `false`, it will aggregate deprecated information into a single message | { strict: boolean } | - | 5.10.0 |
+| toRgbString | Convert to `rgb` format color string, the return type like: `rgb(22, 119, 255)` | `() => string` | - |
+    </API>
+    
+-------split line-------
 
-### ConfigProvider.config()
+    The documentation for the DatePicker basic UI components
+    <when-to-use>
+    By clicking the input box, you can select a date from a popup calendar.
+    </when-to-use>
 
-Setting `Modal`、`Message`、`Notification` static config. Not work on hooks.
-
-```ts
-ConfigProvider.config({
-  prefixCls: 'ant',
-  iconPrefixCls: 'anticon',
-
-  // 5.6.0+
-  // Please use hooks version first
-  theme: { token: { colorPrimary: 'red' } },
-});
-```
-
-### ConfigProvider.useConfig() `5.3.0+`
-
-Available since `5.2.0`. Get the value of the parent `Provider`. Such as `DisabledContextProvider`, `SizeContextProvider`.
-
-```jsx
-const {
-  componentDisabled, // 5.3.0+
-  componentSize, // 5.3.0+
-} = ConfigProvider.useConfig();
-```
-
-| Property | Description | Type | Default | Version |
-| --- | --- | --- | --- | --- |
-| componentDisabled | antd component disabled state | boolean | - | 5.3.0 |
-| componentSize | antd component size state | `small` \| `middle` \| `large` | - | 5.3.0 |
-
-### Component Config
-
-| Property | Description | Type | Default | Version |
-| --- | --- | --- | --- | --- |
-| alert | Set Alert common props | { className?: string, style?: React.CSSProperties } | - | 5.7.0 |
-| anchor | Set Anchor common props | { className?: string, style?: React.CSSProperties } | - | 5.7.0 |
-| avatar | Set Avatar common props | { className?: string, style?: React.CSSProperties } | - | 5.7.0 |
-| badge | Set Badge common props | { className?: string, style?: React.CSSProperties, classNames?: { count?: string, indicator?: string }, styles?: { count?: React.CSSProperties, indicator?: React.CSSProperties } } | - | 5.7.0 |
-| breadcrumb | Set Breadcrumb common props | { className?: string, style?: React.CSSProperties } | - | 5.7.0 |
-| button | Set Button common props | { className?: string, style?: React.CSSProperties, classNames?: { icon: string }, styles?: { icon: React.CSSProperties } } | - | 5.6.0 |
-| card | Set Card common props | { className?: string, style?: React.CSSProperties } | - | 5.7.0 |
-| calendar | Set Calendar common props | { className?: string, style?: React.CSSProperties } | - | 5.7.0 |
-| carousel | Set Carousel common props | { className?: string, style?: React.CSSProperties } | - | 5.7.0 |
-| cascader | Set Cascader common props | { className?: string, style?: React.CSSProperties } | - | 5.7.0 |
-| checkbox | Set Checkbox common props | { className?: string, style?: React.CSSProperties } | - | 5.7.0 |
-| collapse | Set Collapse common props | { className?: string, style?: React.CSSProperties } | - | 5.7.0 |
-| colorPicker | Set ColorPicker common props | { className?: string, style?: React.CSSProperties } | - | 5.7.0 |
-| datePicker | Set datePicker common props | { className?: string, style?: React.CSSProperties } | - | 5.7.0 |
-| descriptions | Set Descriptions common props | { className?: string, style?: React.CSSProperties } | - | 5.7.0 |
-| divider | Set Divider common props | { className?: string, style?: React.CSSProperties } | - | 5.7.0 |
-| drawer | Set Drawer common props | { className?: string, style?: React.CSSProperties, classNames?: [DrawerProps\[""classNames""\]](/components/drawer-cn#api), styles?: [DrawerProps\[""styles""\]](/components/drawer-cn#api) } | - | 5.7.0, `classNames` and `styles`: 5.10.0 |
-| empty | Set Empty common props | { className?: string, style?: React.CSSProperties } | - | 5.7.0 |
-| flex | Set Flex common props | { className?: string, style?: React.CSSProperties, vertical?: boolean } | - | 5.10.0 |
-| form | Set Form common props | { className?: string, style?: React.CSSProperties, validateMessages?: [ValidateMessages](/components/form/#validatemessages), requiredMark?: boolean \| `optional`, scrollToFirstError?: boolean \| [Options](https://github.com/stipsan/scroll-into-view-if-needed/tree/ece40bd9143f48caf4b99503425ecb16b0ad8249#options) } | - | requiredMark: 4.8.0; colon: 4.18.0; scrollToFirstError: 5.2.0; className: 5.7.0; style: 5.7.0 |
-| image | Set Image common props | { className?: string, style?: React.CSSProperties } | - | 5.7.0 |
-| input | Set Input common props | { autoComplete?: string, className?: string, style?: React.CSSProperties } | - | 4.2.0 |
-| layout | Set Layout common props | { className?: string, style?: React.CSSProperties } | - | 5.7.0 |
-| list | Set List common props | { className?: string, style?: React.CSSProperties } | - | 5.7.0 |
-| menu | Set Menu common props | { className?: string, style?: React.CSSProperties } | - | 5.7.0 |
-| mentions | Set Mentions common props | { className?: string, style?: React.CSSProperties } | - | 5.7.0 |
-| message | Set Message common props | { className?: string, style?: React.CSSProperties } | - | 5.7.0 |
-| modal | Set Modal common props | { className?: string, style?: React.CSSProperties, classNames?: [ModalProps\[""classNames""\]](/components/modal-cn#api), styles?: [ModalProps\[""styles""\]](/components/modal-cn#api) } | - | 5.7.0, `classNames` and `styles`: 5.10.0 |
-| notification | Set Notification common props | { className?: string, style?: React.CSSProperties } | - | 5.7.0 |
-| pagination | Set Pagination common props | { showSizeChanger?: boolean, className?: string, style?: React.CSSProperties } | - | 5.7.0 |
-| progress | Set Progress common props | { className?: string, style?: React.CSSProperties } | - | 5.7.0 |
-| radio | Set Radio common props | { className?: string, style?: React.CSSProperties } | - | 5.7.0 |
-| rate | Set Rate common props | { className?: string, style?: React.CSSProperties } | - | 5.7.0 |
-| result | Set Result common props | { className?: string, style?: React.CSSProperties } | - | 5.7.0 |
-| skeleton | Set Skeleton common props | { className?: string, style?: React.CSSProperties } | - | 5.7.0 |
-| segmented | Set Segmented common props | { className?: string, style?: React.CSSProperties } | - | 5.7.0 |
-| select | Set Select common props | { className?: string, showSearch?: boolean, style?: React.CSSProperties } | - | 5.7.0 |
-| slider | Set Slider common props | { className?: string, style?: React.CSSProperties } | - | 5.7.0 |
-| switch | Set Switch common props | { className?: string, style?: React.CSSProperties } | - | 5.7.0 |
-| space | Set Space common props, ref [Space](/components/space) | { size: `small` \| `middle` \| `large` \| `number`, className?: string, style?: React.CSSProperties, classNames?: { item: string }, styles?: { item: React.CSSProperties } } | - | 5.6.0 |
-| spin | Set Spin common props | { className?: string, style?: React.CSSProperties } | - | 5.7.0 |
-| statistic | Set Statistic common props | { className?: string, style?: React.CSSProperties } | - | 5.7.0 |
-| steps | Set Steps common props | { className?: string, style?: React.CSSProperties } | - | 5.7.0 |
-| table | Set Table common props | { className?: string, style?: React.CSSProperties } | - | 5.7.0 |
-| tabs | Set Tabs common props | { className?: string, style?: React.CSSProperties } | - | 5.7.0 |
-| tag | Set Tag common props | { className?: string, style?: React.CSSProperties } | - | 5.7.0 |
-| timeline | Set Timeline common props | { className?: string, style?: React.CSSProperties } | - | 5.7.0 |
-| timePicker | Set TimePicker common props | { className?: string, style?: React.CSSProperties } | - | 5.7.0 |
-| transfer | Set Transfer common props | { className?: string, style?: React.CSSProperties } | - | 5.7.0 |
-| tree | Set Tree common props | { className?: string, style?: React.CSSProperties } | - | 5.7.0 |
-| typography | Set Typography common props | { className?: string, style?: React.CSSProperties } | - | 5.7.0 |
-| upload | Set Upload common props | { className?: string, style?: React.CSSProperties } | - | 5.7.0 |
-| wave | Config wave effect | { disabled?: boolean, showEffect?: (node: HTMLElement, info: { className, token, component }) => void } | - | 5.8.0 |"
-"The props documentation for the DatePicker basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 There are five kinds of picker:
 
 - DatePicker
-- DatePicker\[picker=""month""]
-- DatePicker\[picker=""week""]
-- DatePicker\[picker=""year""]
-- DatePicker\[picker=""quarter""] (Added in 4.1.0)
+- DatePicker\[picker="month"]
+- DatePicker\[picker="week"]
+- DatePicker\[picker="year"]
+- DatePicker\[picker="quarter"] (Added in 4.1.0)
 - RangePicker
 
 ### Localization
@@ -860,9 +962,64 @@ type Generic = string;
 type GenericFn = (value: Dayjs) => string;
 
 export type FormatType = Generic | GenericFn | Array<Generic | GenericFn>;
-```"
-"The props documentation for the Descriptions basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+```
+    </API>
+    
+-------split line-------
+
+    The documentation for the Descriptions basic UI components
+    <when-to-use>
+    Commonly displayed on the details page.
+
+```tsx | pure
+// works when >= 5.8.0, recommended ✅
+
+const items: DescriptionsProps['items'] = [
+  {
+    key: '1',
+    label: 'UserName',
+    children: <p>Zhou Maomao</p>,
+  },
+  {
+    key: '2',
+    label: 'Telephone',
+    children: <p>1810000000</p>,
+  },
+  {
+    key: '3',
+    label: 'Live',
+    children: <p>Hangzhou, Zhejiang</p>,
+  },
+  {
+    key: '4',
+    label: 'Remark',
+    children: <p>empty</p>,
+  },
+  {
+    key: '5',
+    label: 'Address',
+    children: <p>No. 18, Wantang Road, Xihu District, Hangzhou, Zhejiang, China</p>,
+  },
+];
+
+<Descriptions title="User Info" items={items} />;
+
+// works when <5.8.0 , deprecated when >=5.8.0 🙅🏻‍♀️
+
+<Descriptions title="User Info">
+  <Descriptions.Item label="UserName">Zhou Maomao</Descriptions.Item>
+  <Descriptions.Item label="Telephone">1810000000</Descriptions.Item>
+  <Descriptions.Item label="Live">Hangzhou, Zhejiang</Descriptions.Item>
+  <Descriptions.Item label="Remark">empty</Descriptions.Item>
+  <Descriptions.Item label="Address">
+    No. 18, Wantang Road, Xihu District, Hangzhou, Zhejiang, China
+  </Descriptions.Item>
+</Descriptions>;
+```
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 ### Descriptions
 
@@ -888,9 +1045,19 @@ Common props ref：[Common props](/docs/react/common-props)
 | labelStyle | Customize label style | CSSProperties | - | 4.9.0 |
 | span | The number of columns included | number \| [Screens](/components/grid#col) | 1 | `screens: 5.9.0` |
 
-> The number of span Description.Item. Span={2} takes up the width of two DescriptionItems. When both `style` and `labelStyle`(or `contentStyle`) configured, both of them will work. And next one will overwrite first when conflict."
-"The props documentation for the Divider basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+> The number of span Description.Item. Span={2} takes up the width of two DescriptionItems. When both `style` and `labelStyle`(or `contentStyle`) configured, both of them will work. And next one will overwrite first when conflict.
+    </API>
+    
+-------split line-------
+
+    The documentation for the Divider basic UI components
+    <when-to-use>
+    - Divide sections of article.
+- Divide inline text and links such as the operation column of table.
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
@@ -901,9 +1068,22 @@ Common props ref：[Common props](/docs/react/common-props)
 | orientationMargin | The margin-left/right between the title and its closest border, while the `orientation` must be `left` or `right`, If a numeric value of type `string` is provided without a unit, it is assumed to be in pixels (px) by default. | string \| number | - |  |
 | plain | Divider text show as plain style | boolean | true | 4.2.0 |
 | style | The style object of container | CSSProperties | - |  |
-| type | The direction type of divider | `horizontal` \| `vertical` | `horizontal` |  |"
-"The props documentation for the Drawer basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+| type | The direction type of divider | `horizontal` \| `vertical` | `horizontal` |  |
+    </API>
+    
+-------split line-------
+
+    The documentation for the Drawer basic UI components
+    <when-to-use>
+    A Drawer is a panel that is typically overlaid on top of a page and slides in from the side. It contains a set of information or actions. Since the user can interact with the Drawer without leaving the current page, tasks can be achieved more efficiently within the same context.
+
+- Use a Form to create or edit a set of information.
+- Processing subtasks. When subtasks are too heavy for a Popover and we still want to keep the subtasks in the context of the main task, Drawer comes very handy.
+- When the same Form is needed in multiple places.
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 **🚨 Note:** v5 use `rootClassName` & `rootStyle` to config wrapper style instead of `className` & `style` in v4 to align the API with Modal.
 
@@ -935,9 +1115,18 @@ Common props ref：[Common props](/docs/react/common-props)
 | open | Whether the Drawer dialog is visible or not | boolean | false |  |
 | width | Width of the Drawer dialog | string \| number | 378 |  |
 | zIndex | The `z-index` of the Drawer | number | 1000 |  |
-| onClose | Specify a callback that will be called when a user clicks mask, close button or Cancel button | function(e) | - |  |"
-"The props documentation for the Dropdown basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+| onClose | Specify a callback that will be called when a user clicks mask, close button or Cancel button | function(e) | - |  |
+    </API>
+    
+-------split line-------
+
+    The documentation for the Dropdown basic UI components
+    <when-to-use>
+    When there are more than a few options to choose from, you can wrap them in a `Dropdown`. By hovering or clicking on the trigger, a dropdown menu will appear, which allows you to choose an option and execute the relevant action.
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 ### Dropdown
 
@@ -970,9 +1159,19 @@ Same props from Dropdown. And includes additional props:
 | icon | Icon (appears on the right) | ReactNode | - |  |
 | size | Size of the button, the same as [Button](/components/button/#api) | string | `default` |  |
 | type | Type of the button, the same as [Button](/components/button/#api) | string | `default` |  |
-| onClick | The same as [Button](/components/button/#api): called when you click the button on the left | (event) => void | - |  |"
-"The props documentation for the Empty basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+| onClick | The same as [Button](/components/button/#api): called when you click the button on the left | (event) => void | - |  |
+    </API>
+    
+-------split line-------
+
+    The documentation for the Empty basic UI components
+    <when-to-use>
+    - When there is no data provided, display for friendly tips.
+- User tutorial to create something in fresh new situation.
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 ```jsx
 <Empty>
@@ -984,9 +1183,19 @@ Common props ref：[Common props](/docs/react/common-props)
 | --- | --- | --- | --- | --- |
 | description | Customize description | ReactNode | - |  |
 | image | Customize image. Will treat as image url when string provided | ReactNode | `Empty.PRESENTED_IMAGE_DEFAULT` |  |
-| imageStyle | The style of image | CSSProperties | - |  |"
-"The props documentation for the Flex basic UI components","## API
-> This component is available since `antd@5.10.0`. The default behavior of Flex in horizontal mode is to align upward, In vertical mode, aligns the stretch, You can adjust this via properties.
+| imageStyle | The style of image | CSSProperties | - |  |
+    </API>
+    
+-------split line-------
+
+    The documentation for the Flex basic UI components
+    <when-to-use>
+    - Good for setting spacing between elements.
+- Suitable for setting various horizontal and vertical alignments.
+    </when-to-use>
+
+    <API>
+    > This component is available since `antd@5.10.0`. The default behavior of Flex in horizontal mode is to align upward, In vertical mode, aligns the stretch, You can adjust this via properties.
 
 Common props ref：[Common props](/docs/react/common-props)
 
@@ -998,9 +1207,19 @@ Common props ref：[Common props](/docs/react/common-props)
 | align | Sets the alignment of elements in the direction of the cross axis | reference [align-items](https://developer.mozilla.org/en-US/docs/Web/CSS/align-items) | normal |  |
 | flex | flex CSS shorthand properties | reference [flex](https://developer.mozilla.org/en-US/docs/Web/CSS/flex) | normal |  |
 | gap | Sets the gap between grids | `small` \| `middle` \| `large` \| string \| number | - |  |
-| component | custom element type | React.ComponentType | `div` |  |"
-"The props documentation for the FloatButton basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+| component | custom element type | React.ComponentType | `div` |  |
+    </API>
+    
+-------split line-------
+
+    The documentation for the FloatButton basic UI components
+    <when-to-use>
+    - For global functionality on the site.
+- Buttons that can be seen wherever you browse.
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 > This component is available since `antd@5.0.0`.
 
@@ -1034,247 +1253,19 @@ Common props ref：[Common props](/docs/react/common-props)
 | duration | Time to return to top（ms） | number | 450 |  |
 | target | Specifies the scrollable area dom node | () => HTMLElement | () => window |  |
 | visibilityHeight | The BackTop button will not show until the scroll height reaches this value | number | 400 |  |
-| onClick | A callback function, which can be executed when you click the button | () => void | - |  |"
-"The props documentation for the Form basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+| onClick | A callback function, which can be executed when you click the button | () => void | - |  |
+    </API>
+    
+-------split line-------
 
-### Form
+    The documentation for the Image basic UI components
+    <when-to-use>
+    - When you need to display pictures.
+- Display when loading a large image or fault tolerant handling when loading fail.
+    </when-to-use>
 
-| Property | Description | Type | Default | Version |
-| --- | --- | --- | --- | --- |
-| colon | Configure the default value of `colon` for Form.Item. Indicates whether the colon after the label is displayed (only effective when prop layout is horizontal) | boolean | true |  |
-| disabled | Set form component disable, only available for antd components | boolean | false | 4.21.0 |
-| component | Set the Form rendering element. Do not create a DOM node for `false` | ComponentType \| false | form |  |
-| fields | Control of form fields through state management (such as redux). Not recommended for non-strong demand. View [example](#components-form-demo-global-state) | [FieldData](#fielddata)\[] | - |  |
-| form | Form control instance created by `Form.useForm()`. Automatically created when not provided | [FormInstance](#forminstance) | - |  |
-| feedbackIcons | Can be passed custom icons while `Form.Item` element has `hasFeedback` | [FeedbackIcons](#feedbackicons) | - | 5.9.0 |
-| initialValues | Set value by Form initialization or reset | object | - |  |
-| labelAlign | The text align of label of all items | `left` \| `right` | `right` |  |
-| labelWrap | whether label can be wrap | boolean | false | 4.18.0 |
-| labelCol | Label layout, like `<Col>` component. Set `span` `offset` value like `{span: 3, offset: 12}` or `sm: {span: 3, offset: 12}` | [object](/components/grid/#col) | - |  |
-| layout | Form layout | `horizontal` \| `vertical` \| `inline` | `horizontal` |  |
-| name | Form name. Will be the prefix of Field `id` | string | - |  |
-| preserve | Keep field value even when field removed | boolean | true | 4.4.0 |
-| requiredMark | Required mark style. Can use required mark or optional mark. You can not config to single Form.Item since this is a Form level config | boolean \| `optional` \| ((label: ReactNode, info: { required: boolean }) => ReactNode) | true | `renderProps`: 5.9.0 |
-| scrollToFirstError | Auto scroll to first failed field when submit | boolean \| [Options](https://github.com/stipsan/scroll-into-view-if-needed/tree/ece40bd9143f48caf4b99503425ecb16b0ad8249#options) | false |  |
-| size | Set field component size (antd components only) | `small` \| `middle` \| `large` | - |  |
-| validateMessages | Validation prompt template, description [see below](#validatemessages) | [ValidateMessages](https://github.com/ant-design/ant-design/blob/6234509d18bac1ac60fbb3f92a5b2c6a6361295a/components/locale/en_US.ts#L88-L134) | - |  |
-| validateTrigger | Config field validate trigger | string \| string\[] | `onChange` | 4.3.0 |
-| wrapperCol | The layout for input controls, same as `labelCol` | [object](/components/grid/#col) | - |  |
-| onFieldsChange | Trigger when field updated | function(changedFields, allFields) | - |  |
-| onFinish | Trigger after submitting the form and verifying data successfully | function(values) | - |  |
-| onFinishFailed | Trigger after submitting the form and verifying data failed | function({ values, errorFields, outOfDate }) | - |  |
-| onValuesChange | Trigger when value updated | function(changedValues, allValues) | - |  |
-
-### validateMessages
-
-Form provides [default verification error messages](https://github.com/ant-design/ant-design/blob/6234509d18bac1ac60fbb3f92a5b2c6a6361295a/components/locale/en_US.ts#L88-L134). You can modify the template by configuring `validateMessages` property. A common usage is to configure localization:
-
-```jsx
-const validateMessages = {
-  required: ""'${name}' is required!"",
-  // ...
-};
-
-<Form validateMessages={validateMessages} />;
-```
-
-Besides, [ConfigProvider](/components/config-provider/) also provides a global configuration scheme that allows for uniform configuration error notification templates:
-
-```jsx
-const validateMessages = {
-  required: ""'${name}' is Required!"",
-  // ...
-};
-
-<ConfigProvider form={{ validateMessages }}>
-  <Form />
-</ConfigProvider>;
-```"
-"The props documentation for the Grid basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
-
-If the Ant Design grid layout component does not meet your needs, you can use the excellent layout components of the community:
-
-- [react-flexbox-grid](http://roylee0704.github.io/react-flexbox-grid/)
-- [react-blocks](https://github.com/whoisandy/react-blocks/)
-
-### Row
-
-| Property | Description | Type | Default | Version |
-| --- | --- | --- | --- | --- |
-| align | Vertical alignment | `top` \| `middle` \| `bottom` \| `stretch` \| `{[key in 'xs' \| 'sm' \| 'md' \| 'lg' \| 'xl' \| 'xxl']: 'top' \| 'middle' \| 'bottom' \| 'stretch'}` | `top` | object: 4.24.0 |
-| gutter | Spacing between grids, could be a number or a object like { xs: 8, sm: 16, md: 24}. Or you can use array to make horizontal and vertical spacing work at the same time `[horizontal, vertical]` | number \| object \| array | 0 |  |
-| justify | Horizontal arrangement | `start` \| `end` \| `center` \| `space-around` \| `space-between` \| `space-evenly` \| `{[key in 'xs' \| 'sm' \| 'md' \| 'lg' \| 'xl' \| 'xxl']: 'start' \| 'end' \| 'center' \| 'space-around' \| 'space-between' \| 'space-evenly'}` | `start` | object: 4.24.0 |
-| wrap | Auto wrap line | boolean | true | 4.8.0 |
-
-### Col
-
-| Property | Description | Type | Default | Version |
-| --- | --- | --- | --- | --- |
-| flex | Flex layout style | string \| number | - |  |
-| offset | The number of cells to offset Col from the left | number | 0 |  |
-| order | Raster order | number | 0 |  |
-| pull | The number of cells that raster is moved to the left | number | 0 |  |
-| push | The number of cells that raster is moved to the right | number | 0 |  |
-| span | Raster number of cells to occupy, 0 corresponds to `display: none` | number | none |  |
-| xs | `screen < 576px` and also default setting, could be a `span` value or an object containing above props | number \| object | - |  |
-| sm | `screen ≥ 576px`, could be a `span` value or an object containing above props | number \| object | - |  |
-| md | `screen ≥ 768px`, could be a `span` value or an object containing above props | number \| object | - |  |
-| lg | `screen ≥ 992px`, could be a `span` value or an object containing above props | number \| object | - |  |
-| xl | `screen ≥ 1200px`, could be a `span` value or an object containing above props | number \| object | - |  |
-| xxl | `screen ≥ 1600px`, could be a `span` value or an object containing above props | number \| object | - |  |
-
-You can modify the breakpoints values using by modifying `screen[XS|SM|MD|LG|XL|XXL]` with [theme customization](/docs/react/customize-theme) (since 5.1.0, [sandbox demo](https://codesandbox.io/s/antd-reproduction-template-forked-dlq3r9?file=/index.js)).
-
-The breakpoints of responsive grid follow [BootStrap 4 media queries rules](https://getbootstrap.com/docs/4.0/layout/overview/#responsive-breakpoints) (not including `occasionally part`)."
-"The props documentation for the Icon basic UI components","## API
-### Common Icon
-
-| Property | Description | Type | Default | Version |
-| --- | --- | --- | --- | --- |
-| className | The className of Icon | string | - |  |
-| rotate | Rotate by n degrees (not working in IE9) | number | - |  |
-| spin | Rotate icon with animation | boolean | false |  |
-| style | The style properties of icon, like `fontSize` and `color` | CSSProperties | - |  |
-| twoToneColor | Only supports the two-tone icon. Specify the primary color | string (hex color) | - |  |
-
-We still have three different themes for icons, icon component name is the icon name suffixed by the theme name.
-
-```jsx
-import { StarOutlined, StarFilled, StarTwoTone } from '@ant-design/icons';
-
-<StarOutlined />
-<StarFilled />
-<StarTwoTone twoToneColor=""#eb2f96"" />
-```
-
-### Custom Icon
-
-| Property | Description | Type | Default | Version |
-| --- | --- | --- | --- | --- |
-| component | The component used for the root node | ComponentType&lt;CustomIconComponentProps> | - |  |
-| rotate | Rotate degrees (not working in IE9) | number | - |  |
-| spin | Rotate icon with animation | boolean | false |  |
-| style | The style properties of icon, like `fontSize` and `color` | CSSProperties | - |  |
-
-### About SVG icons
-
-We introduced SVG icons in version `3.9.0`, replacing font icons. This has the following benefits:
-
-- Complete offline usage of icons, without dependency on a CDN-hosted font icon file (No more empty square during downloading and no need to deploy icon font files locally either!)
-- Much more display accuracy on lower-resolution screens
-- The ability to choose icon color
-- No need to change built-in icons with overriding styles by providing more props in component
-
-More discussion of SVG icon reference at [#10353](https://github.com/ant-design/ant-design/issues/10353).
-
-> ⚠️ Given the extra bundle size caused by all SVG icons imported in 3.9.0, we will provide a new API to allow developers to import icons as needed, you can track [#12011](https://github.com/ant-design/ant-design/issues/12011) for updates.
->
-> While you wait, you can use [webpack plugin](https://github.com/Beven91/webpack-ant-icon-loader) from the community to chunk the icon file.
-
-The properties `theme`, `component` and `twoToneColor` were added in `3.9.0`. The best practice is to pass the property `theme` to every `<Icon />` component.
-
-```jsx
-import { MessageOutlined } from '@ant-design/icons';
-
-<MessageOutlined style={{ fontSize: '16px', color: '#08c' }} />;
-```
-
-All the icons will render to `<svg>`. You can still set `style` and `className` for size and color of icons.
-
-```jsx
-<Icon type=""message"" style={{ fontSize: '16px', color: '#08c' }} theme=""outlined"" />
-```
-
-### Set TwoTone Color
-
-When using the two-tone icons, you can use the static methods `getTwoToneColor()` and `setTwoToneColor(colorString)` to specify the primary color.
-
-```jsx
-import { getTwoToneColor, setTwoToneColor } from '@ant-design/icons';
-
-setTwoToneColor('#eb2f96');
-getTwoToneColor(); // #eb2f96
-```
-
-### Custom Font Icon
-
-We added a `createFromIconfontCN` function to help developer use their own icons deployed at [iconfont.cn](http://iconfont.cn/) in a convenient way.
-
-> This method is specified for [iconfont.cn](http://iconfont.cn/).
-
-```jsx
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { createFromIconfontCN } from '@ant-design/icons';
-
-const MyIcon = createFromIconfontCN({
-  scriptUrl: '//at.alicdn.com/t/font_8d5l8fzk5b87iudi.js', // generate in iconfont.cn
-});
-
-ReactDOM.createRoot(mountNode).render(<MyIcon type=""icon-example"" />);
-```
-
-It creates a component that uses SVG sprites in essence.
-
-The following options are available:
-
-| Property | Description | Type | Default | Version |
-| --- | --- | --- | --- | --- |
-| extraCommonProps | Define extra properties to the component | { \[key: string]: any } | {} |  |
-| scriptUrl | The URL generated by [iconfont.cn](http://iconfont.cn/) project. Support `string[]` after `@ant-design/icons@4.1.0` | string \| string\[] | - |  |
-
-The property `scriptUrl` should be set to import the SVG sprite symbols.
-
-See [iconfont.cn documents](http://iconfont.cn/help/detail?spm=a313x.7781069.1998910419.15&helptype=code) to learn about how to generate `scriptUrl`.
-
-### Custom SVG Icon
-
-You can import SVG icon as a react component by using `webpack` and [`@svgr/webpack`](https://www.npmjs.com/package/@svgr/webpack). `@svgr/webpack`'s `options` [reference](https://github.com/smooth-code/svgr#options).
-
-```js
-// webpack.config.js
-module.exports = {
-  // ... other config
-  test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-  use: [
-    {
-      loader: 'babel-loader',
-    },
-    {
-      loader: '@svgr/webpack',
-      options: {
-        babel: false,
-        icon: true,
-      },
-    },
-  ],
-};
-```
-
-```jsx
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import Icon from '@ant-design/icons';
-import MessageSvg from 'path/to/message.svg'; // path to your '*.svg' file.
-// in create-react-app:
-// import { ReactComponent as MessageSvg } from 'path/to/message.svg';
-
-ReactDOM.createRoot(mountNode).render(<Icon component={MessageSvg} />);
-```
-
-The following properties are available for the component:
-
-| Property | Description | Type | Readonly | Version |
-| --- | --- | --- | --- | --- |
-| className | The computed class name of the `svg` element | string | - |  |
-| fill | Define the color used to paint the `svg` element | string | `currentColor` |  |
-| height | The height of the `svg` element | string \| number | `1em` |  |
-| style | The computed style of the `svg` element | CSSProperties | - |  |
-| width | The width of the `svg` element | string \| number | `1em` |  |"
-"The props documentation for the Image basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 ### Image
 
@@ -1310,9 +1301,19 @@ Other attributes [&lt;img>](https://developer.mozilla.org/en-US/docs/Web/HTML/El
 | toolbarRender | Custom toolbar render | (originalNode: React.ReactElement, info: Omit<[ToolbarRenderInfoType](#toolbarrenderinfotype), 'current' \| 'total'>) => React.ReactNode | - | 5.7.0 |
 | imageRender | Custom preview content | (originalNode: React.ReactElement, info: { transform: [TransformType](#transformtype) }) => React.ReactNode | - | 5.7.0 |
 | onTransform | Callback when the transform of image changed | { transform: [TransformType](#transformtype), action: [TransformAction](#transformaction) } | - | 5.7.0 |
-| onVisibleChange | Callback when `visible` changed | (visible: boolean, prevVisible: boolean) => void | - | - |"
-"The props documentation for the Input basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+| onVisibleChange | Callback when `visible` changed | (visible: boolean, prevVisible: boolean) => void | - | - |
+    </API>
+    
+-------split line-------
+
+    The documentation for the Input basic UI components
+    <when-to-use>
+    - A user input in a form field is needed.
+- A search input is required.
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 ### Input
 
@@ -1333,7 +1334,7 @@ Common props ref：[Common props](/docs/react/common-props)
 | prefix | The prefix icon for the Input | ReactNode | - |  |
 | size | The size of the input box. Note: in the context of a form, the `middle` size is used | `large` \| `middle` \| `small` | - |  |
 | suffix | The suffix icon for the Input | ReactNode | - |  |
-| type | The type of input, see: [MDN](https://developer.mozilla.org/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types)( use `Input.TextArea` instead of `type=""textarea""`) | string | `text` |  |
+| type | The type of input, see: [MDN](https://developer.mozilla.org/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types)( use `Input.TextArea` instead of `type="textarea"`) | string | `text` |  |
 | value | The input content value | string | - |  |
 | onChange | Callback when user input | function(e) | - |  |
 | onPressEnter | The callback function that is triggered when Enter key is pressed | function(e) | - |  |
@@ -1366,7 +1367,7 @@ The rest of the props of `Input.TextArea` are the same as the original [textarea
 | --- | --- | --- | --- |
 | enterButton | Whether to show an enter button after input. This property conflicts with the `addonAfter` property | boolean \| ReactNode | false |
 | loading | Search box with loading | boolean | false |
-| onSearch | The callback function triggered when you click on the search-icon, the clear-icon or press the Enter key | function(value, event, { source: ""input"" \| ""clear"" }) | - |
+| onSearch | The callback function triggered when you click on the search-icon, the clear-icon or press the Enter key | function(value, event, { source: "input" \| "clear" }) | - |
 
 Supports all props of `Input`.
 
@@ -1409,9 +1410,18 @@ Supports all props of `Input`.
 | Property | Description | Version |
 | --- | --- | --- |
 | textarea | `textarea` element | 5.4.0 |
-| count | Text count element | 5.4.0 |"
-"The props documentation for the InputNumber basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+| count | Text count element | 5.4.0 |
+    </API>
+    
+-------split line-------
+
+    The documentation for the InputNumber basic UI components
+    <when-to-use>
+    When a numeric value needs to be provided.
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
@@ -1438,67 +1448,18 @@ Common props ref：[Common props](/docs/react/common-props)
 | value | The current value | number | - | - |
 | onChange | The callback triggered when the value is changed | function(value: number \| string \| null) | - | - |
 | onPressEnter | The callback function that is triggered when Enter key is pressed | function(e) | - | - |
-| onStep | The callback function that is triggered when click up or down buttons | (value: number, info: { offset: number, type: 'up' \| 'down' }) => void | - | 4.7.0 |"
-"The props documentation for the Layout basic UI components","## API
-```jsx
-<Layout>
-  <Header>header</Header>
-  <Layout>
-    <Sider>left sidebar</Sider>
-    <Content>main content</Content>
-    <Sider>right sidebar</Sider>
-  </Layout>
-  <Footer>footer</Footer>
-</Layout>
-```
+| onStep | The callback function that is triggered when click up or down buttons | (value: number, info: { offset: number, type: 'up' \| 'down' }) => void | - | 4.7.0 |
+    </API>
+    
+-------split line-------
 
-### Layout
+    The documentation for the List basic UI components
+    <when-to-use>
+    A list can be used to display content related to a single subject. The content can consist of multiple elements of varying type and size.
+    </when-to-use>
 
-Common props ref：[Common props](/docs/react/common-props)
-
-The wrapper.
-
-| Property | Description | Type | Default |
-| --- | --- | --- | --- |
-| className | Container className | string | - |
-| hasSider | Whether contain Sider in children, don't have to assign it normally. Useful in ssr avoid style flickering | boolean | - |
-| style | To customize the styles | CSSProperties | - |
-
-### Layout.Sider
-
-The sidebar.
-
-| Property | Description | Type | Default |
-| --- | --- | --- | --- |
-| breakpoint | [Breakpoints](/components/grid/#col) of the responsive layout | `xs` \| `sm` \| `md` \| `lg` \| `xl` \| `xxl` | - |
-| className | Container className | string | - |
-| collapsed | To set the current status | boolean | - |
-| collapsedWidth | Width of the collapsed sidebar, by setting to 0 a special trigger will appear | number | 80 |
-| collapsible | Whether can be collapsed | boolean | false |
-| defaultCollapsed | To set the initial status | boolean | false |
-| reverseArrow | Reverse direction of arrow, for a sider that expands from the right | boolean | false |
-| style | To customize the styles | CSSProperties | - |
-| theme | Color theme of the sidebar | `light` \| `dark` | `dark` |
-| trigger | Specify the customized trigger, set to null to hide the trigger | ReactNode | - |
-| width | Width of the sidebar | number \| string | 200 |
-| zeroWidthTriggerStyle | To customize the styles of the special trigger that appears when `collapsedWidth` is 0 | object | - |
-| onBreakpoint | The callback function, executed when [breakpoints](/components/grid/#api) changed | (broken) => {} | - |
-| onCollapse | The callback function, executed by clicking the trigger or activating the responsive layout | (collapsed, type) => {} | - |
-
-#### breakpoint width
-
-```js
-{
-  xs: '480px',
-  sm: '576px',
-  md: '768px',
-  lg: '992px',
-  xl: '1200px',
-  xxl: '1600px',
-}
-```"
-"The props documentation for the List basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 ### List
 
@@ -1515,7 +1476,7 @@ Common props ref：[Common props](/docs/react/common-props)
 | locale | The i18n text including empty text | object | {emptyText: `No Data`} |  |
 | pagination | Pagination [config](/components/pagination/), hide it by setting it to false | boolean \| object | false |  |
 | renderItem | Customize list item when using `dataSource` | (item) => ReactNode | - |  |
-| rowKey | Item's unique value, could be an Item's key which holds a unique value of type `React.Key` or function that receives Item and returns a `React.Key` | `keyof` T \| (item: T) => `React.Key` | `""key""` |  |
+| rowKey | Item's unique value, could be an Item's key which holds a unique value of type `React.Key` or function that receives Item and returns a `React.Key` | `keyof` T \| (item: T) => `React.Key` | `"key"` |  |
 | size | Size of list | `default` \| `large` \| `small` | `default` |  |
 | split | Toggles rendering of the split under the list item | boolean | true |  |
 
@@ -1556,9 +1517,35 @@ More about pagination, please check [`Pagination`](/components/pagination/).
 | ----------- | ---------------------------- | --------- | ------- | ------- |
 | avatar      | The avatar of list item      | ReactNode | -       |         |
 | description | The description of list item | ReactNode | -       |         |
-| title       | The title of list item       | ReactNode | -       |         |"
-"The props documentation for the Mentions basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+| title       | The title of list item       | ReactNode | -       |         |
+    </API>
+    
+-------split line-------
+
+    The documentation for the Mentions basic UI components
+    <when-to-use>
+    When you need to mention someone or something.
+
+### Usage upgrade after 5.1.0
+
+<Alert message="After version 5.1.0, we provide a simpler usage &lt;Mentions options={[...]} /&gt;  with better performance and potential of writing simpler code style in your applications. Meanwhile, we deprecated the old usage in browser console, we will remove it in antd 6.0."></Alert>
+
+```jsx
+// works when >=5.1.0, recommended ✅
+const options = [{ value: 'sample', label: 'sample' }];
+return <Mentions options={options} />;
+
+// works when <5.1.0, deprecated when >=5.1.0 🙅🏻‍♀️
+return (
+  <Mentions onChange={onChange}>
+    <Mentions.Option value="sample">Sample</Mentions.Option>
+  </Mentions>
+);
+```
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 ### Mention
 
@@ -1600,9 +1587,20 @@ Common props ref：[Common props](/docs/react/common-props)
 | key | The key value of the option | string | - |
 | disabled | Optional | boolean | - |
 | className | className | string | - |
-| style | The style of the option | React.CSSProperties | - |"
-"The props documentation for the Menu basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+| style | The style of the option | React.CSSProperties | - |
+    </API>
+    
+-------split line-------
+
+    The documentation for the Menu basic UI components
+    <when-to-use>
+    Navigation is an important part of any website, as a good navigation setup allows users to move around the site quickly and efficiently. Ant Design offers two navigation options: top and side. Top navigation provides all the categories and functions of the website. Side navigation provides the multi-level structure of the website.
+
+More layouts with navigation: [Layout](/components/layout).
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 ### Menu
 
@@ -1658,8 +1656,8 @@ Common props ref：[Common props](/docs/react/common-props)
 | icon | Icon of sub menu | ReactNode | - |  |
 | key | Unique ID of the sub-menu | string | - |  |
 | label | Menu label | ReactNode | - |  |
-| popupClassName | Sub-menu class name, not working when `mode=""inline""` | string | - |  |
-| popupOffset | Sub-menu offset, not working when `mode=""inline""` | \[number, number] | - |  |
+| popupClassName | Sub-menu class name, not working when `mode="inline"` | string | - |  |
+| popupOffset | Sub-menu offset, not working when `mode="inline"` | \[number, number] | - |  |
 | theme | Color theme of the SubMenu (inherits from Menu by default) |  | `light` \| `dark` | - |  |
 | onTitleClick | Callback executed when the sub-menu title is clicked | function({ key, domEvent }) | - |  |
 
@@ -1692,9 +1690,19 @@ const dividerItem = {
 
 | Param  | Description            | Type    | Default value | Version |
 | ------ | ---------------------- | ------- | ------------- | ------- |
-| dashed | Whether line is dashed | boolean | false         |         |"
-"The props documentation for the Message basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+| dashed | Whether line is dashed | boolean | false         |         |
+    </API>
+    
+-------split line-------
+
+    The documentation for the Message basic UI components
+    <when-to-use>
+    - To provide feedback such as success, warning, error etc.
+- A message is displayed at top and center and will be dismissed automatically, as a non-interrupting light-weighted prompt.
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 This component provides some static methods, with usage and arguments as following:
 
@@ -1771,9 +1779,20 @@ message.config({
 | maxCount | Max message show, drop oldest if exceed limit | number | - |  |
 | prefixCls | The prefix className of message node | string | `ant-message` | 4.5.0 |
 | rtl | Whether to enable RTL mode | boolean | false |  |
-| top | Distance from top | number | 8 |  |"
-"The props documentation for the Modal basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+| top | Distance from top | number | 8 |  |
+    </API>
+    
+-------split line-------
+
+    The documentation for the Modal basic UI components
+    <when-to-use>
+    When requiring users to interact with the application, but without jumping to a new page and interrupting the user's workflow, you can use `Modal` to create a new floating layer over the current page to get user feedback or display information.
+
+Additionally, if you need show a simple confirmation dialog, you can use [`App.useApp`](/components/app/) hooks.
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
@@ -1909,9 +1928,22 @@ return <div>{contextHolder}</div>;
 ```tsx
 // Return `true` when click `onOk` and `false` when click `onCancel`
 const confirmed = await modal.confirm({ ... });
-```"
-"The props documentation for the Notification basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+```
+    </API>
+    
+-------split line-------
+
+    The documentation for the Notification basic UI components
+    <when-to-use>
+    To display a notification message at any of the four corners of the viewport. Typically it can be used in the following cases:
+
+- A notification with complex content.
+- A notification providing a feedback based on the user interaction. Or it may show some details about upcoming steps the user may have to follow.
+- A notification that is pushed by the application.
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 - `notification.success(config)`
 - `notification.error(config)`
@@ -1984,17 +2016,19 @@ notification.config({
 | placement | Position of Notification, can be one of `topLeft` `topRight` `bottomLeft` `bottomRight` | string | `topRight` |  |
 | rtl | Whether to enable RTL mode | boolean | false |  |
 | top | Distance from the top of the viewport, when `placement` is `topRight` or `topLeft` (unit: pixels) | number | 24 |  |
-| maxCount | Max Notification show, drop oldest if exceed limit | number | - | 4.17.0 |"
-"The props documentation for the Components Overview basic UI components","## API
-ategory: Components
-title: Components Overview
----
+| maxCount | Max Notification show, drop oldest if exceed limit | number | - | 4.17.0 |
+    </API>
+    
+-------split line-------
 
-`antd` provides plenty of UI components to enrich your web applications, and we will improve components experience consistently. We also recommend some great [Third-Party Libraries](/docs/react/recommendation) additionally.
+    The documentation for the Pagination basic UI components
+    <when-to-use>
+    - When it will take a long time to load/render all items.
+- If you want to browse the data by navigating through pages.
+    </when-to-use>
 
-<ComponentOverview></ComponentOverview>"
-"The props documentation for the Pagination basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 ```jsx
 <Pagination onChange={onChange} total={50} />
@@ -2020,9 +2054,20 @@ Common props ref：[Common props](/docs/react/common-props)
 | size | Specify the size of `Pagination`, can be set to `small` | `default` \| `small` | `default` |  |
 | total | Total number of data items | number | 0 |  |
 | onChange | Called when the page number or `pageSize` is changed, and it takes the resulting page number and pageSize as its arguments | function(page, pageSize) | - |  |
-| onShowSizeChange | Called when `pageSize` is changed | function(current, size) | - |  |"
-"The props documentation for the Popconfirm basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+| onShowSizeChange | Called when `pageSize` is changed | function(current, size) | - |  |
+    </API>
+    
+-------split line-------
+
+    The documentation for the Popconfirm basic UI components
+    <when-to-use>
+    A simple and compact dialog used for asking for user confirmation.
+
+The difference with the `confirm` modal dialog is that it's more lightweight than the static popped full-screen confirm modal.
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 | Param | Description | Type | Default value | Version |
 | --- | --- | --- | --- | --- |
@@ -2040,18 +2085,41 @@ Common props ref：[Common props](/docs/react/common-props)
 | onConfirm | A callback of confirmation | function(e) | - |  |
 | onPopupClick | A callback of popup click | function(e) | - | 5.5.0 |
 
-Consult [Tooltip's documentation](/components/tooltip/#api) to find more APIs."
-"The props documentation for the Popover basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+Consult [Tooltip's documentation](/components/tooltip/#api) to find more APIs.
+    </API>
+    
+-------split line-------
+
+    The documentation for the Popover basic UI components
+    <when-to-use>
+    A simple popup menu to provide extra information or operations.
+
+Comparing with `Tooltip`, besides information `Popover` card can also provide action elements like links and buttons.
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 | Param   | Description         | Type                         | Default value | Version |
 | ------- | ------------------- | ---------------------------- | ------------- | ------- |
 | content | Content of the card | ReactNode \| () => ReactNode | -             |         |
 | title   | Title of the card   | ReactNode \| () => ReactNode | -             |         |
 
-Consult [Tooltip's documentation](/components/tooltip/#api) to find more APIs."
-"The props documentation for the Progress basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+Consult [Tooltip's documentation](/components/tooltip/#api) to find more APIs.
+    </API>
+    
+-------split line-------
+
+    The documentation for the Progress basic UI components
+    <when-to-use>
+    If it will take a long time to complete an operation, you can use `Progress` to show the current progress and status.
+
+- When an operation will interrupt the current interface, or it needs to run in the background for more than 2 seconds.
+- When you need to display the completion percentage of an operation.
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 Properties that shared by all types.
 
@@ -2066,31 +2134,40 @@ Properties that shared by all types.
 | success | Configs of successfully progress bar | { percent: number, strokeColor: string } | - | - |
 | trailColor | The color of unfilled part | string | - | - |
 | type | To set the type, options: `line` `circle` `dashboard` | string | `line` |
-| size | Progress size | number \| \[number \| string, number] \| ""small"" \| ""default"" | ""default"" | v5.3.0 |
+| size | Progress size | number \| \[number \| string, number] \| "small" \| "default" | "default" | v5.3.0 |
 
-### `type=""line""`
+### `type="line"`
 
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
 | steps | The total step count | number | - | - |
 | strokeColor | The color of progress bar, render `linear-gradient` when passing an object, could accept `string[]` when has `steps`. | string \| string[] \| { from: string; to: string; direction: string } | - | 4.21.0: `string[]` |
 
-### `type=""circle""`
+### `type="circle"`
 
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
 | strokeColor | The color of circular progress, render gradient when passing an object | string \| { number%: string } | - | - |
 | strokeWidth | To set the width of the circular progress, unit: percentage of the canvas width | number | 6 | - |
 
-### `type=""dashboard""`
+### `type="dashboard"`
 
 | Property | Description | Type | Default |
 | --- | --- | --- | --- |
 | gapDegree | The gap degree of half circle, 0 ~ 295 | number | 75 |
 | gapPosition | The gap position, options: `top` `bottom` `left` `right` | string | `bottom` |
-| strokeWidth | To set the width of the dashboard progress, unit: percentage of the canvas width | number | 6 |"
-"The props documentation for the QRCode basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+| strokeWidth | To set the width of the dashboard progress, unit: percentage of the canvas width | number | 6 |
+    </API>
+    
+-------split line-------
+
+    The documentation for the QRCode basic UI components
+    <when-to-use>
+    Used when the text needs to be converted into a QR Code.
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 > This component is available since `antd@5.1.0`
 
@@ -2106,9 +2183,19 @@ Common props ref：[Common props](/docs/react/common-props)
 | bordered | Whether has border style | boolean | `true` |
 | errorLevel | Error Code Level | `'L' \| 'M' \| 'Q' \| 'H' ` | `M` |
 | status | QRCode status | `active \| expired \| loading ` | `active` |
-| onRefresh | callback | `() => void` | - |"
-"The props documentation for the Radio basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+| onRefresh | callback | `() => void` | - |
+    </API>
+    
+-------split line-------
+
+    The documentation for the Radio basic UI components
+    <when-to-use>
+    - Used to select a single state from multiple options.
+- The difference from Select is that Radio is visible to the user and can facilitate the comparison of choice, which means there shouldn't be too many of them.
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 ### Radio/Radio.Button
 
@@ -2129,14 +2216,24 @@ Radio group can wrap a group of `Radio`。
 | buttonStyle | The style type of radio button | `outline` \| `solid` | `outline` |  |
 | defaultValue | Default selected value | any | - |  |
 | disabled | Disable all radio buttons | boolean | false |  |
-| name | The `name` property of all `input[type=""radio""]` children | string | - |  |
+| name | The `name` property of all `input[type="radio"]` children | string | - |  |
 | options | Set children optional | string\[] \| number\[] \| Array&lt;{ label: ReactNode; value: string; disabled?: boolean; }> | - |  |
 | optionType | Set Radio optionType | `default` \| `button` | `default` | 4.4.0 |
 | size | The size of radio button style | `large` \| `middle` \| `small` | - |  |
 | value | Used for setting the currently selected value | any | - |  |
-| onChange | The callback function that is triggered when the state changes | function(e:Event) | - |  |"
-"The props documentation for the Rate basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+| onChange | The callback function that is triggered when the state changes | function(e:Event) | - |  |
+    </API>
+    
+-------split line-------
+
+    The documentation for the Rate basic UI components
+    <when-to-use>
+    - Show evaluation.
+- A quick rating operation on something.
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 | Property | Description | type | Default | Version |
 | --- | --- | --- | --- | --- |
@@ -2155,9 +2252,18 @@ Common props ref：[Common props](/docs/react/common-props)
 | onChange | Callback when select value | function(value: number) | - |  |
 | onFocus | Callback when component get focus | function() | - |  |
 | onHoverChange | Callback when hover item | function(value: number) | - |  |
-| onKeyDown | Callback when keydown on component | function(event) | - |  |"
-"The props documentation for the Result basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+| onKeyDown | Callback when keydown on component | function(event) | - |  |
+    </API>
+    
+-------split line-------
+
+    The documentation for the Result basic UI components
+    <when-to-use>
+    Use when important operations need to inform the user to process the results and the feedback is more complicated.
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 | Property | Description | Type | Default |
 | --- | --- | --- | --- |
@@ -2165,9 +2271,19 @@ Common props ref：[Common props](/docs/react/common-props)
 | icon | Custom back icon | ReactNode | - |
 | status | Result status, decide icons and colors | `success` \| `error` \| `info` \| `warning` \| `404` \| `403` \| `500` | `info` |
 | subTitle | The subTitle | ReactNode | - |
-| title | The title | ReactNode | - |"
-"The props documentation for the Segmented basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+| title | The title | ReactNode | - |
+    </API>
+    
+-------split line-------
+
+    The documentation for the Segmented basic UI components
+    <when-to-use>
+    - When displaying multiple options and user can select a single option;
+- When switching the selected option, the content of the associated area changes.
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 > This component is available since `antd@4.20.0`
 
@@ -2179,9 +2295,20 @@ Common props ref：[Common props](/docs/react/common-props)
 | onChange | The callback function that is triggered when the state changes | function(value: string \| number) |  |  |
 | options | Set children optional | string\[] \| number\[] \| Array<{ label: ReactNode value: string icon? ReactNode disabled?: boolean className?: string }> | [] |  |
 | size | The size of the Segmented. | `large` \| `middle` \| `small` | `middle` |  |
-| value | Currently selected value | string \| number |  |  |"
-"The props documentation for the Select basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+| value | Currently selected value | string \| number |  |  |
+    </API>
+    
+-------split line-------
+
+    The documentation for the Select basic UI components
+    <when-to-use>
+    - A dropdown menu for displaying choices - an elegant alternative to the native `<select>` element.
+- Utilizing [Radio](/components/radio/) is recommended when there are fewer total options (less than 5).
+- You probably need [AutoComplete](/components/auto-complete/) if you're looking for an input box that can be typed or selected.
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 ### Select props
 
@@ -2219,13 +2346,13 @@ Common props ref：[Common props](/docs/react/common-props)
 | placeholder | Placeholder of select | ReactNode | - |  |
 | placement | The position where the selection box pops up | `bottomLeft` `bottomRight` `topLeft` `topRight` | bottomLeft |  |
 | removeIcon | The custom remove icon | ReactNode | - |  |
-| searchValue | The current input ""search"" text | string | - |  |
+| searchValue | The current input "search" text | string | - |  |
 | showSearch | Whether select is searchable | boolean | single: false, multiple: true |  |
 | size | Size of Select input | `large` \| `middle` \| `small` | `middle` |  |
 | status | Set validation status | 'error' \| 'warning' | - | 4.19.0 |
 | suffixIcon | The custom suffix icon. Customize icon will not response click open to avoid icon designed to do other interactive. You can use `pointer-events: none` style to bypass | ReactNode | `<DownOutlined />` |  |
 | tagRender | Customize tag render, only applies when `mode` is set to `multiple` or `tags` | (props) => ReactNode | - |  |
-| tokenSeparators | Separator used to tokenize, only applies when `mode=""tags""` | string\[] | - |  |
+| tokenSeparators | Separator used to tokenize, only applies when `mode="tags"` | string\[] | - |  |
 | value | Current selected option (considered as a immutable array) | string \| string\[] \| <br />number \| number\[] \| <br />LabeledValue \| LabeledValue\[] | - |  |
 | virtual | Disable virtual scroll when set to false | boolean | true | 4.1.0 |
 | onBlur | Called when blur | function | - |  |
@@ -2264,9 +2391,21 @@ Common props ref：[Common props](/docs/react/common-props)
 | Property | Description | Type                    | Default | Version |
 | -------- | ----------- | ----------------------- | ------- | ------- |
 | key      | Group key   | string                  | -       |         |
-| label    | Group label | string \| React.Element | -       |         |"
-"The props documentation for the Skeleton basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+| label    | Group label | string \| React.Element | -       |         |
+    </API>
+    
+-------split line-------
+
+    The documentation for the Skeleton basic UI components
+    <when-to-use>
+    - When a resource needs long time to load.
+- When the component contains lots of information, such as List or Card.
+- Only works when loading data for the first time.
+- Could be replaced by Spin in any situation, but can provide a better user experience.
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 ### Skeleton
 
@@ -2314,9 +2453,18 @@ Common props ref：[Common props](/docs/react/common-props)
 | Property | Description           | Type                            | Default |
 | -------- | --------------------- | ------------------------------- | ------- |
 | active   | Show animation effect | boolean                         | false   |
-| size     | Set the size of input | `large` \| `small` \| `default` | -       |"
-"The props documentation for the Slider basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+| size     | Set the size of input | `large` \| `small` \| `default` | -       |
+    </API>
+    
+-------split line-------
+
+    The documentation for the Slider basic UI components
+    <when-to-use>
+    To input a value in a range.
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
@@ -2361,9 +2509,19 @@ Common props ref：[Common props](/docs/react/common-props)
 | open | If true, Tooltip will show always, or it will not show anyway, even if dragging or hovering | boolean | - | 4.23.0 |
 | placement | Set Tooltip display position. Ref [Tooltip](/components/tooltip/) | string | - | 4.23.0 |
 | getPopupContainer | The DOM container of the Tooltip, the default behavior is to create a div element in body | (triggerNode) => HTMLElement | () => document.body | 4.23.0 |
-| formatter | Slider will pass its value to `formatter`, and display its value in Tooltip, and hide Tooltip when return value is null | value => ReactNode \| null | IDENTITY | 4.23.0 |"
-"The props documentation for the Space basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+| formatter | Slider will pass its value to `formatter`, and display its value in Tooltip, and hide Tooltip when return value is null | value => ReactNode \| null | IDENTITY | 4.23.0 |
+    </API>
+    
+-------split line-------
+
+    The documentation for the Space basic UI components
+    <when-to-use>
+    - Avoid components clinging together and set a unified space.
+- Use Space.Compact when child form components are compactly connected and the border is collapsed (After version `antd@4.24.0` Supported).
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
@@ -2401,9 +2559,18 @@ Use Space.Compact when child form components are compactly connected and the bor
 <!-- prettier-ignore -->
 | Property | Description | Version |
 | -------- | ------------------------- | ------- |
-| item     | set `Space` child element | 5.6.0   |"
-"The props documentation for the Spin basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+| item     | set `Space` child element | 5.6.0   |
+    </API>
+    
+-------split line-------
+
+    The documentation for the Spin basic UI components
+    <when-to-use>
+    When part of the page is waiting for asynchronous data or during a rendering process, an appropriate loading animation can effectively alleviate users' inquietude.
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 | Property | Description | Type | Default |
 | --- | --- | --- | --- |
@@ -2418,9 +2585,19 @@ Common props ref：[Common props](/docs/react/common-props)
 
 - `Spin.setDefaultIndicator(indicator: ReactNode)`
 
-  You can define default spin element globally."
-"The props documentation for the Statistic basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+  You can define default spin element globally.
+    </API>
+    
+-------split line-------
+
+    The documentation for the Statistic basic UI components
+    <when-to-use>
+    - When want to highlight some data.
+- When want to display statistic data with description.
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 #### Statistic
 
@@ -2448,9 +2625,18 @@ Common props ref：[Common props](/docs/react/common-props)
 | value | Set target countdown time | number \| dayjs | - |  |
 | valueStyle | Set value section style | CSSProperties | - |  |
 | onFinish | Trigger when time's up | () => void | - |  |
-| onChange | Trigger when time's changing | (value: number) => void | - | 4.16.0 |"
-"The props documentation for the Steps basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+| onChange | Trigger when time's changing | (value: number) => void | - | 4.16.0 |
+    </API>
+    
+-------split line-------
+
+    The documentation for the Steps basic UI components
+    <when-to-use>
+    When a given task is complicated or has a certain sequence in the series of subtasks, we can decompose it into several steps to make things easier.
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 ### Steps
 
@@ -2472,7 +2658,7 @@ The whole of the step bar.
 | onChange | Trigger when Step is changed | (current) => void | - |  |
 | items | StepItem content | [StepItem](#stepitem) | [] | 4.24.0 |
 
-### `type=""inline""`
+### `type="inline"`
 
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
@@ -2494,9 +2680,19 @@ A single step in the step bar.
 | icon | Icon of the step, optional property | ReactNode | - |  |
 | status | To specify the status. It will be automatically set by `current` of `Steps` if not configured. Optional values are: `wait` `process` `finish` `error` | string | `wait` |  |
 | subTitle | Subtitle of the step | ReactNode | - |  |
-| title | Title of the step | ReactNode | - |  |"
-"The props documentation for the Switch basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+| title | Title of the step | ReactNode | - |  |
+    </API>
+    
+-------split line-------
+
+    The documentation for the Switch basic UI components
+    <when-to-use>
+    - If you need to represent the switching between two states or on-off state.
+- The difference between `Switch` and `Checkbox` is that `Switch` will trigger a state change directly when you toggle it, while `Checkbox` is generally used for state marking, which should work in conjunction with submit operation.
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 | Property | Description | Type | Default |
 | --- | --- | --- | --- |
@@ -2510,9 +2706,19 @@ Common props ref：[Common props](/docs/react/common-props)
 | size | The size of the Switch, options: `default` `small` | string | `default` |
 | unCheckedChildren | The content to be shown when the state is unchecked | ReactNode | - |
 | onChange | Trigger when the checked state is changing | function(checked: boolean, event: Event) | - |
-| onClick | Trigger when clicked | function(checked: boolean, event: Event) | - |"
-"The props documentation for the Table basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+| onClick | Trigger when clicked | function(checked: boolean, event: Event) | - |
+    </API>
+    
+-------split line-------
+
+    The documentation for the Table basic UI components
+    <when-to-use>
+    - To display a collection of structured data.
+- To sort, search, paginate, filter data.
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 ### Table
 
@@ -2687,9 +2893,22 @@ Properties for row selection.
 | --- | --- | --- | --- |
 | key | Unique key of this selection | string | - |
 | text | Display text of this selection | ReactNode | - |
-| onSelect | Callback executed when this selection is clicked | function(changeableRowKeys) | - |"
-"The props documentation for the Tabs basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+| onSelect | Callback executed when this selection is clicked | function(changeableRowKeys) | - |
+    </API>
+    
+-------split line-------
+
+    The documentation for the Tabs basic UI components
+    <when-to-use>
+    Ant Design has 3 types of Tabs for different situations.
+
+- Card Tabs: for managing too many closeable views.
+- Normal Tabs: for functional aspects of a page.
+- [Radio.Button](/components/radio/#components-radio-demo-radiobutton): for secondary tabs.
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 ### Tabs
 
@@ -2701,7 +2920,7 @@ Common props ref：[Common props](/docs/react/common-props)
 | animated | Whether to change tabs with animation. | boolean \| { inkBar: boolean, tabPane: boolean } | { inkBar: true, tabPane: false } |  |
 | centered | Centers tabs | boolean | false | 4.4.0 |
 | defaultActiveKey | Initial active TabPane's key, if `activeKey` is not set | string | - |  |
-| hideAdd | Hide plus icon or not. Only works while `type=""editable-card""` | boolean | false |  |
+| hideAdd | Hide plus icon or not. Only works while `type="editable-card"` | boolean | false |  |
 | indicatorSize | Customize length of indicator, which is the same as tab by default | number \| (origin: number) => number | - | 5.9.0 |
 | items | Configure tab content | [TabItemType](#tabitemtype) | [] | 4.23.0 |
 | moreIcon | The custom icon of ellipsis | ReactNode | &lt;EllipsisOutlined /> | 4.14.0 |
@@ -2715,7 +2934,7 @@ Common props ref：[Common props](/docs/react/common-props)
 | destroyInactiveTabPane | Whether destroy inactive TabPane when change tab | boolean | false |  |
 | type | Basic style of tabs | `line` \| `card` \| `editable-card` | `line` |  |
 | onChange | Callback executed when active tab is changed | function(activeKey) {} | - |  |
-| onEdit | Callback executed when tab is added or removed. Only works while `type=""editable-card""` | (action === 'add' ? event : targetKey, action): void | - |  |
+| onEdit | Callback executed when tab is added or removed. Only works while `type="editable-card"` | (action === 'add' ? event : targetKey, action): void | - |  |
 | onTabClick | Callback executed when tab is clicked | function(key: string, event: MouseEvent) | - |  |
 | onTabScroll | Trigger when tab scroll | function({ direction: `left` \| `right` \| `top` \| `bottom` }) | - | 4.3.0 |
 
@@ -2725,14 +2944,25 @@ More option at [rc-tabs tabs](https://github.com/react-component/tabs#tabs)
 
 | Property | Description | Type | Default |
 | --- | --- | --- | --- |
-| closeIcon | Customize close icon in TabPane's head. Only works while `type=""editable-card""`. 5.7.0: close button will be hidden when setting to `null` or `false` | boolean \| ReactNode | - |
+| closeIcon | Customize close icon in TabPane's head. Only works while `type="editable-card"`. 5.7.0: close button will be hidden when setting to `null` or `false` | boolean \| ReactNode | - |
 | disabled | Set TabPane disabled | boolean | false |
 | forceRender | Forced render of content in tabs, not lazy render after clicking on tabs | boolean | false |
 | key | TabPane's key | string | - |
 | label | TabPane's head display text | ReactNode | - |
-| children | TabPane's head display content | ReactNode | - |"
-"The props documentation for the Tag basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+| children | TabPane's head display content | ReactNode | - |
+    </API>
+    
+-------split line-------
+
+    The documentation for the Tag basic UI components
+    <when-to-use>
+    - It can be used to tag by dimension or property.
+
+- When categorizing.
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 ### Tag
 
@@ -2749,9 +2979,18 @@ Common props ref：[Common props](/docs/react/common-props)
 | Property | Description                                     | Type              | Default |
 | -------- | ----------------------------------------------- | ----------------- | ------- |
 | checked  | Checked status of Tag                           | boolean           | false   |
-| onChange | Callback executed when Tag is checked/unchecked | (checked) => void | -       |"
-"The props documentation for the TimePicker basic UI components","## API
----
+| onChange | Callback executed when Tag is checked/unchecked | (checked) => void | -       |
+    </API>
+    
+-------split line-------
+
+    The documentation for the TimePicker basic UI components
+    <when-to-use>
+    By clicking the input box, you can select a time from a popup panel.
+    </when-to-use>
+
+    <API>
+    ---
 
 Common props ref：[Common props](/docs/react/common-props)
 
@@ -2806,9 +3045,34 @@ type DisabledTime = (now: Dayjs) => {
   disabledMinutes?: (selectedHour: number) => number[];
   disabledSeconds?: (selectedHour: number, selectedMinute: number) => number[];
 };
-```"
-"The props documentation for the Timeline basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+```
+    </API>
+    
+-------split line-------
+
+    The documentation for the Timeline basic UI components
+    <when-to-use>
+    - When a series of information needs to be ordered by time (ascending or descending).
+- When you need a timeline to make a visual connection.
+
+<Alert message="After version 5.2.0, we provide a simpler usage &lt;Timeline items={[...]} /&gt; with better performance and potential of writing simpler code style in your applications. Meanwhile, we deprecated the old usage in browser console, we will remove it in antd 6.0."></Alert>
+
+```jsx
+// works when >=5.2.0, recommended ✅
+const items = [{ children: 'sample', label: 'sample' }];
+return <Timeline items={items} />;
+
+// works when <5.2.0, deprecated when >=5.2.0 🙅🏻‍♀️
+return (
+  <Timeline onChange={onChange}>
+    <Timeline.Item>Sample</Timeline.Item>
+  </Timeline>
+);
+```
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 ### Timeline
 
@@ -2830,9 +3094,19 @@ Node of timeline.
 | dot | Customize timeline dot | ReactNode | - |
 | label | Set the label | ReactNode | - |
 | children | Set the content | ReactNode | - |
-| position | Customize node position | `left` \| `right` | - |"
-"The props documentation for the Tooltip basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+| position | Customize node position | `left` \| `right` | - |
+    </API>
+    
+-------split line-------
+
+    The documentation for the Tooltip basic UI components
+    <when-to-use>
+    - The tip is shown on mouse enter, and is hidden on mouse leave. The Tooltip doesn't support complex text or operations.
+- To provide an explanation of a `button/text/operation`. It's often used instead of the html `title` attribute.
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 | Property | Description                   | Type                         | Default |
 | -------- | ----------------------------- | ---------------------------- | ------- |
@@ -2861,9 +3135,18 @@ The following APIs are shared by Tooltip, Popconfirm, Popover.
 | trigger | Tooltip trigger mode. Could be multiple by passing an array | `hover` \| `focus` \| `click` \| `contextMenu` \| Array&lt;string> | `hover` |  |
 | open | Whether the floating tooltip card is open or not. Use `visible` under 4.23.0 ([why?](/docs/react/faq#why-open)) | boolean | false | 4.23.0 |
 | zIndex | Config `z-index` of Tooltip | number | - |  |
-| onOpenChange | Callback executed when visibility of the tooltip card is changed | (open: boolean) => void | - | 4.23.0 |"
-"The props documentation for the Tour basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+| onOpenChange | Callback executed when visibility of the tooltip card is changed | (open: boolean) => void | - | 4.23.0 |
+    </API>
+    
+-------split line-------
+
+    The documentation for the Tour basic UI components
+    <when-to-use>
+    Use when you want to guide users through a product.
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 ### Tour
 
@@ -2898,9 +3181,25 @@ Common props ref：[Common props](/docs/react/common-props)
 | type | Type, affects the background color and text color | `default` `primary` | `default` |  |
 | nextButtonProps | Properties of the Next button | `{ children: ReactNode; onClick: Function }` | - |  |
 | prevButtonProps | Properties of the previous button | `{ children: ReactNode; onClick: Function }` | - |  |
-| scrollIntoViewOptions | support pass custom scrollIntoView options, the default follows the `scrollIntoViewOptions` property of Tour | `boolean \| ScrollIntoViewOptions` | `true` | 5.2.0 |"
-"The props documentation for the Transfer basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+| scrollIntoViewOptions | support pass custom scrollIntoView options, the default follows the `scrollIntoViewOptions` property of Tour | `boolean \| ScrollIntoViewOptions` | `true` | 5.2.0 |
+    </API>
+    
+-------split line-------
+
+    The documentation for the Transfer basic UI components
+    <when-to-use>
+    - It is a select control essentially which can be use for selecting multiple items.
+- Transfer can display more information for items and take up more space.
+
+Transfer the elements between two columns in an intuitive and efficient way.
+
+One or more elements can be selected from either column, one click on the proper `direction` button, and the transfer is done. The left column is considered the `source` and the right column is considered the `target`. As you can see in the API description, these names are reflected in.
+
+> notice: Transfer is a controlled component, uncontrolled mode is not supported.
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
@@ -2945,9 +3244,18 @@ Transfer accept `children` to customize render list, using follow props:
 
 ```jsx
 <Transfer {...props}>{(listProps) => <YourComponent {...listProps} />}</Transfer>
-```"
-"The props documentation for the Tree basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+```
+    </API>
+    
+-------split line-------
+
+    The documentation for the Tree basic UI components
+    <when-to-use>
+    Almost anything can be represented in a tree structure. Examples include directories, organization hierarchies, biological classifications, countries, etc. The `Tree` component is a way of representing the hierarchical relationship between these things. You can also expand, collapse, and select a treeNode within a `Tree`.
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 ### Tree props
 
@@ -3012,9 +3320,18 @@ Common props ref：[Common props](/docs/react/common-props)
 
 | Property | Description | Type | Default |
 | --- | --- | --- | --- |
-| expandAction | Directory open logic, optional: false \| `click` \| `doubleClick` | string \| boolean | `click` |"
-"The props documentation for the TreeSelect basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+| expandAction | Directory open logic, optional: false \| `click` \| `doubleClick` | string \| boolean | `click` |
+    </API>
+    
+-------split line-------
+
+    The documentation for the TreeSelect basic UI components
+    <when-to-use>
+    `TreeSelect` is similar to `Select`, but the values are provided in a tree like structure. Any data whose entries are defined in a hierarchical manner is fit to use this control. Examples of such case may include a corporate hierarchy, a directory structure, and so on.
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 ### Tree props
 
@@ -3053,7 +3370,7 @@ Common props ref：[Common props](/docs/react/common-props)
 | treeCheckable | Whether to show checkbox on the treeNodes | boolean | false |  |
 | treeCheckStrictly | Whether to check nodes precisely (in the `checkable` mode), means parent and child nodes are not associated, and it will make `labelInValue` be true | boolean | false |  |
 | treeData | Data of the treeNodes, manual construction work is no longer needed if this property has been set(ensure the Uniqueness of each value) | array&lt;{ value, title, children, \[disabled, disableCheckbox, selectable, checkable] }> | \[] |  |
-| treeDataSimpleMode | Enable simple mode of treeData. Changes the `treeData` schema to: \[{id:1, pId:0, value:'1', title:""test1"",...},...] where pId is parent node's id). It is possible to replace the default `id` and `pId` keys by providing object to `treeDataSimpleMode` | boolean \| object&lt;{ id: string, pId: string, rootPId: string }> | false |  |
+| treeDataSimpleMode | Enable simple mode of treeData. Changes the `treeData` schema to: \[{id:1, pId:0, value:'1', title:"test1",...},...] where pId is parent node's id). It is possible to replace the default `id` and `pId` keys by providing object to `treeDataSimpleMode` | boolean \| object&lt;{ id: string, pId: string, rootPId: string }> | false |  |
 | treeDefaultExpandAll | Whether to expand all treeNodes by default | boolean | false |  |
 | treeDefaultExpandedKeys | Default expanded treeNodes | string\[] | - |  |
 | treeExpandAction | Tree title open logic when click, optional: false \| `click` \| `doubleClick` | string \| boolean | false | 4.21.0 |
@@ -3091,9 +3408,19 @@ Common props ref：[Common props](/docs/react/common-props)
 | key | Required property (unless using `treeDataSimpleMode`), should be unique in the tree | string | - |  |
 | selectable | Whether can be selected | boolean | true |  |
 | title | Content showed on the treeNodes | ReactNode | `---` |  |
-| value | Will be treated as `treeNodeFilterProp` by default, should be unique in the tree | string | - |  |"
-"The props documentation for the Typography basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+| value | Will be treated as `treeNodeFilterProp` by default, should be unique in the tree | string | - |  |
+    </API>
+    
+-------split line-------
+
+    The documentation for the Typography basic UI components
+    <when-to-use>
+    - When need to display a title or paragraph contents in Articles/Blogs/Notes.
+- When you need copyable/editable/ellipsis texts.
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 ### Typography.Text
 
@@ -3195,7 +3522,7 @@ Common props ref：[Common props](/docs/react/common-props)
 | onStart | Called when enter editable state | function | - |  |
 | onEnd | Called when type ENTER to exit editable state | function | - | 4.14.0 |
 | triggerType | Edit mode trigger - icon, text or both (not specifying icon as trigger hides it) | Array&lt;`icon`\|`text`> | \[`icon`] |  |
-| enterIcon | Custom ""enter"" icon in the edit field (passing `null` removes the icon) | ReactNode | `<EnterOutlined />` | 4.17.0 |
+| enterIcon | Custom "enter" icon in the edit field (passing `null` removes the icon) | ReactNode | `<EnterOutlined />` | 4.17.0 |
 
 ### ellipsis
 
@@ -3217,9 +3544,22 @@ Common props ref：[Common props](/docs/react/common-props)
 | symbol | Custom description of ellipsis | ReactNode | `Expand` |  |
 | tooltip | Show tooltip when ellipsis | boolean \| ReactNode \| [TooltipProps](/components/tooltip/#api) | - | 4.11.0 |
 | onEllipsis | Called when enter or leave ellipsis state | function(ellipsis) | - | 4.2.0 |
-| onExpand | Called when expand content | function(event) | - |  |"
-"The props documentation for the Upload basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+| onExpand | Called when expand content | function(event) | - |  |
+    </API>
+    
+-------split line-------
+
+    The documentation for the Upload basic UI components
+    <when-to-use>
+    Uploading is the process of publishing information (web pages, text, pictures, video, etc.) to a remote server via a web page or upload tool.
+
+- When you need to upload one or more files.
+- When you need to show the process of uploading.
+- When you need to upload files by dragging and dropping.
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
@@ -3243,7 +3583,7 @@ Common props ref：[Common props](/docs/react/common-props)
 | name | The name of uploading file | string | `file` |  |
 | openFileDialogOnClick | Click open file dialog | boolean | true |  |
 | previewFile | Customize preview file logic | (file: File \| Blob) => Promise&lt;dataURL: string> | - |  |
-| progress | Custom progress bar | [ProgressProps](/components/progress/#api) (support `type=""line""` only) | { strokeWidth: 2, showInfo: false } | 4.3.0 |
+| progress | Custom progress bar | [ProgressProps](/components/progress/#api) (support `type="line"` only) | { strokeWidth: 2, showInfo: false } | 4.3.0 |
 | showUploadList | Whether to show default upload list, could be an object to specify `showPreviewIcon`, `showRemoveIcon`, `showDownloadIcon`, `removeIcon` and `downloadIcon` individually | boolean \| { showPreviewIcon?: boolean, showDownloadIcon?: boolean, showRemoveIcon?: boolean, previewIcon?: ReactNode \| (file: UploadFile) => ReactNode, removeIcon?: ReactNode \| (file: UploadFile) => ReactNode, downloadIcon?: ReactNode \| (file: UploadFile) => ReactNode } | true | function: 4.7.0 |
 | withCredentials | The ajax upload with cookie sent | boolean | false |  |
 | onChange | A callback function, can be executed when uploading state is changing. It will trigger by every uploading phase. see [onChange](#onchange) | function | - |  |
@@ -3287,17 +3627,27 @@ When uploading state change, it returns:
       uid: 'uid',      // unique identifier, negative is recommended, to prevent interference with internally generated id
       name: 'xx.png',   // file name
       status: 'done' | 'uploading' | 'error' | 'removed', // Intercepted file by beforeUpload doesn't have a status field.
-      response: '{""status"": ""success""}', // response from server
-      linkProps: '{""download"": ""image""}', // additional HTML props of file link
+      response: '{"status": "success"}', // response from server
+      linkProps: '{"download": "image"}', // additional HTML props of file link
       xhr: 'XMLHttpRequest{ ... }', // XMLHttpRequest Header
    }
    ```
 
 2. `fileList` current list of files
 
-3. `event` response from the server, including uploading progress, supported by advanced browsers."
-"The props documentation for the Watermark basic UI components","## API
-Common props ref：[Common props](/docs/react/common-props)
+3. `event` response from the server, including uploading progress, supported by advanced browsers.
+    </API>
+    
+-------split line-------
+
+    The documentation for the Watermark basic UI components
+    <when-to-use>
+    - Use when the page needs to be watermarked to identify the copyright.
+- Suitable for preventing information theft.
+    </when-to-use>
+
+    <API>
+    Common props ref：[Common props](/docs/react/common-props)
 
 ### Watermark
 
@@ -3323,4 +3673,6 @@ Common props ref：[Common props](/docs/react/common-props)
 | fontWeight | font weight | `normal` \| `light` \| `weight` \| number | normal |  |
 | fontFamily | font family | string | sans-serif |  |
 | fontStyle | font style  | `none` \| `normal` \| `italic` \| `oblique` | normal |  |
-| textAlign | specify the text alignment direction  | [CanvasTextAlign](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/textAlign) | `center` | 5.10.0 |"
+| textAlign | specify the text alignment direction  | [CanvasTextAlign](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/textAlign) | `center` | 5.10.0 |
+    </API>
+    
