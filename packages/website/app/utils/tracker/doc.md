@@ -1,0 +1,74 @@
+# Tracker
+
+A lightweight tracking tool for collecting user behavior data and page analytics.
+
+## When To Use
+
+- When you need to track user behaviors like page views, clicks, and page duration
+- When you want to collect custom events data for analytics
+- When you need automatic tracking for basic user interactions
+- When you need to analyze user engagement and page performance
+
+## API
+
+### Tracker Instance
+
+The default export is a singleton instance of the Tracker class:
+
+```typescript
+import { tracker } from '@/utils/tracker';
+```
+
+### Methods
+
+| Method    | Description           | Parameters                                                                             | Return |
+| --------- | --------------------- | -------------------------------------------------------------------------------------- | ------ |
+| track     | Track a custom event  | `eventType: string`<br/>`eventName: string`<br/>`properties?: Record<string, unknown>` | void   |
+| setUserId | Set or update user ID | `userId: string`                                                                       | void   |
+
+### Auto-tracking Events
+
+The tracker automatically collects the following events:
+
+| Event Type    | Event Name                 | Description                                                  | Properties             |
+| ------------- | -------------------------- | ------------------------------------------------------------ | ---------------------- |
+| page_view     | page_view                  | Triggered when page loads                                    | -                      |
+| click         | [element data-track value] | Triggered when clicking elements with `data-track` attribute | -                      |
+| page_duration | page_leave                 | Triggered when user leaves the page                          | `{ duration: number }` |
+
+### Usage Examples
+
+```typescript
+// Track custom event
+tracker.track('button_click', 'submit_form', {
+  formId: 'login',
+  success: true
+});
+
+// Set user ID
+tracker.setUserId('user_123456');
+
+// Add click tracking to element
+<button data-track="submit_button">Submit</button>
+```
+
+### Event Data Structure
+
+Each tracking event contains the following data:
+
+```typescript
+interface TrackerEvent {
+  eventType: string; // Type of the event
+  eventName: string; // Name of the event
+  pageUrl: string; // Current page URL
+  timestamp: number; // Event timestamp
+  userId?: string; // User ID if available
+  deviceInfo?: {
+    // Device information
+    userAgent: string;
+    screenResolution: string;
+    platform: string;
+  };
+  properties?: Record<string, unknown>; // Custom properties
+}
+```
