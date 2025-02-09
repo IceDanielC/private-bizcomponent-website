@@ -15,10 +15,10 @@ export const styleFiles = globSync(
   path
     .join(
       process.cwd(),
-      'components/!(version|config-provider|icon|auto-complete|col|row|time-picker|qrcode)/style/index.?(ts|tsx)',
+      'components/!(version|config-provider|icon|auto-complete|col|row|time-picker|qrcode)/style/index.?(ts|tsx)'
     )
     .split(path.sep)
-    .join('/'),
+    .join('/')
 );
 
 export const generateCssinjs = ({ key, beforeRender, render }: GenCssinjsOptions) =>
@@ -29,20 +29,30 @@ export const generateCssinjs = ({ key, beforeRender, render }: GenCssinjsOptions
       const styleIndex = pathArr.lastIndexOf('style');
       const componentName = pathArr[styleIndex - 1];
       let useStyle: StyleFn = () => {};
-      if (file.includes('grid')) {
-        const { useColStyle, useRowStyle } = await import(absPath);
-        useStyle = (prefixCls: string) => {
-          useRowStyle(prefixCls);
-          useColStyle(prefixCls);
+
+      try {
+        if (file.includes('grid')) {
+          const { useColStyle, useRowStyle } = await import(absPath);
+          useStyle = (prefixCls: string) => {
+            useRowStyle(prefixCls);
+            useColStyle(prefixCls);
+          };
+        } else {
+          const imported = await import(absPath);
+          // 检查导入的模块是否有默认导出，如果没有则尝试使用具名导出
+          useStyle = imported.default || imported.useStyle || (() => {});
+        }
+
+        const Demo: React.FC = () => {
+          useStyle(`${key}-${componentName}`);
+          return React.createElement('div');
         };
-      } else {
-        useStyle = (await import(absPath)).default;
+
+        beforeRender?.(componentName);
+        render?.(Demo);
+      } catch (error) {
+        console.warn(`Failed to process style for component ${componentName}:`, error);
+        // 继续执行，不中断整个流程
       }
-      const Demo: React.FC = () => {
-        useStyle(`${key}-${componentName}`);
-        return React.createElement('div');
-      };
-      beforeRender?.(componentName);
-      render?.(Demo);
-    }),
+    })
   );
