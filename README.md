@@ -12,18 +12,11 @@ packages
 
 ## 快速开始
 
-### 以来构建
+### 依赖安装
 
 ```bash
 npm install -g nrm
 pnpm install
-```
-
-### 构建私有组件 RAG 知识文档
-
-```bash
-cd @private-basic-components
-node ai-docs/format-docs.js
 ```
 
 ### 启动业务组件 storybook 文档网站
@@ -31,4 +24,11 @@ node ai-docs/format-docs.js
 ```bash
 cd website
 pnpm storybook
+```
+
+### 构建私有组件 RAG 知识文档
+
+```bash
+cd @private-basic-components
+node ai-docs/format-docs.js
 ```
