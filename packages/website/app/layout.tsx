@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { AntdRegistry } from '@ant-design/nextjs-registry';
 import localFont from 'next/font/local';
 
 import './globals.css';
@@ -27,11 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="light">
-      <AntdRegistry>
-        <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-          {children}
-        </body>
-      </AntdRegistry>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
     </html>
   );
 }
